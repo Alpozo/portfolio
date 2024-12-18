@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+:root {
+  --primary-bg: #1E1E1E;
+  --secondary-bg: rgba(0, 0, 0, 0.5); /* #000 con 50% */
+  --tertiary-bg: rgba(255, 255, 255, 0.1); /* #FFF con 10% */
+  --primary-txt: #EDEDED;
+  --secondary-txt: rgba(255, 255, 255, 0.5); /* #FFF con 50% */
+}
+
+body {
+  background-color: var(--primary-bg);
+  color: var(--primary-txt);
+  font-family: "Source Sans 3", Arial, sans-serif;
+}
+
+p {
+  margin: 0; 
+}
+
+.secondary-bg {
+  background-color: var(--secondary-bg);
+}
+
+.tertiary-bg {
+  background-color: var(--tertiary-bg);
+}
+
+.secondary-txt {
+  color: var(--secondary-txt);
+}
+
+.text-header {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.text-body-regular {
+  font-size: 18px;
+  line-height: 32px;
+
+}
+
+.main-wrapper {
+  width: 527px;
+  background-color: red;
+  margin: 128px;
+} 
