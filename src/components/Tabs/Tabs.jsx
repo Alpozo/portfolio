@@ -1,27 +1,28 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "./Tabs.css";
 
-export const Tabs = () => { // Named export
-  const [activeTab, setActiveTab] = useState(0);
-  const [indicatorStyle, setIndicatorStyle] = useState({});
+export const Tabs = ({ activeTab, onTabChange }) => { // Recibe props
   const tabsRef = useRef([]);
-
   const tabs = ["Featured", "Experience", "About", "Connect"];
+  const [indicatorStyle, setIndicatorStyle] = React.useState({});
 
   useEffect(() => {
     const updateIndicator = () => {
       const activeTabElement = tabsRef.current[activeTab];
       if (activeTabElement) {
         setIndicatorStyle({
-          width: `${activeTabElement.offsetWidth}px`, // Ancho de la pestaña activa
-          transform: `translateX(${activeTabElement.offsetLeft}px)`, // Posición de la pestaña activa
+          width: `${activeTabElement.offsetWidth}px`, // Ancho dinámico
+          transform: `translateX(${activeTabElement.offsetLeft}px)`, // Posición dinámica
         });
       }
     };
 
     updateIndicator();
-    window.addEventListener("resize", updateIndicator); // Actualizar al redimensionar
-    return () => window.removeEventListener("resize", updateIndicator);
+    window.addEventListener("resize", updateIndicator); // Actualiza al redimensionar
+
+    return () => {
+      window.removeEventListener("resize", updateIndicator);
+    };
   }, [activeTab]);
 
   return (
@@ -31,13 +32,13 @@ export const Tabs = () => { // Named export
           <button
             key={index}
             className={`tab-item ${activeTab === index ? "active" : ""}`}
-            onClick={() => setActiveTab(index)}
-            ref={(el) => (tabsRef.current[index] = el)} // Referencia a cada pestaña
+            onClick={() => onTabChange(index)} // Cambia la pestaña activa
+            ref={(el) => (tabsRef.current[index] = el)} // Referencia para el indicador
           >
             {tab}
           </button>
         ))}
-        {/* Barra inferior que se adapta dinámicamente */}
+        {/* Barra dinámica */}
         <div className="tab-indicator" style={indicatorStyle}></div>
       </div>
     </div>
