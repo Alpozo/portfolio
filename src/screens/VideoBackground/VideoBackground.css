@@ -1,0 +1,8 @@
+
+  .background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que el video cubra el área */
+    object-position: top;
+    filter: grayscale(100%) opacity(0.8); /* Efecto: sin saturación y opacidad */
+  }

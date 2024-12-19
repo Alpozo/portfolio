@@ -1,0 +1,49 @@
+.tabs-container {
+    display: flex;
+    align-items: center;
+    background-color: #1e1e1e; /* Fondo oscuro */
+    padding: 0px 12px;
+ 
+  }
+  
+  .tabs {
+    position: relative;
+    margin-top: 40px;
+    display: flex;
+    gap: 24px; /* Espaciado entre pestañas */
+  }
+  
+  .tab-item {
+    position: relative;
+    background: none;
+    border: none;
+    color: #6e6e6e; /* Color gris claro */
+    font-size: 16px;
+    cursor: pointer;
+    padding: 8px 0;
+    outline: none;
+    transition: color 0.3s ease;
+    color: var(--secondary-txt);
+    font-size: 18px;
+    line-height: 32px;
+  }
+  
+  .tab-item.active {
+    color: #ffffff; /* Texto blanco para la pestaña activa */
+  }
+  
+  .tab-item:hover {
+    color: #ffffff;
+  }
+  
+  /* La barra inferior */
+  .tab-indicator {
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    height: 2px;
+    width: 100px; /* Ancho de cada pestaña */
+    background-color: #ffffff;
+    border-radius: 8px;
+    transition: transform 0.4s ease;
+  }

@@ -1,0 +1,12 @@
+.cell-wrapper {
+    border-radius: 8px;
+    padding: 12px;
+    width: 100%;
+    background-color: none;
+    transition: transform 0.8s ease, background-color 0.8s ease;
+
+}
+
+.cell-wrapper:hover {
+    background-color:var(--secondary-bg);
+}

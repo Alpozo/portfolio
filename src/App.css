@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import './normalize.css';
 
 :root {
   --primary-bg: #1E1E1E;
@@ -12,12 +13,15 @@ body {
   background-color: var(--primary-bg);
   color: var(--primary-txt);
   font-family: "Source Sans 3", Arial, sans-serif;
+  flex:1;
 }
 
 p {
   margin: 0; 
 }
 
+
+/* colors */
 .secondary-bg {
   background-color: var(--secondary-bg);
 }
@@ -30,6 +34,8 @@ p {
   color: var(--secondary-txt);
 }
 
+
+/* Typography */
 .text-header {
   font-weight: bold;
   font-size: 24px;
@@ -42,8 +48,54 @@ p {
 
 }
 
+.text-small-regular {
+  font-size: 16px;
+  line-height: 16px;
+  color: var(--secondary-txt);
+}
+
+
+/* Wrappers */
+
+.body-wrapper {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+}
+
 .main-wrapper {
-  width: 527px;
-  background-color: red;
-  margin: 128px;
-} 
+  width: 1080px;
+  height: 100vh; 
+  display: flex;
+  padding: 64px 128px 0px 128px;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.list-wrapper {
+  width: 100%;
+  height: 100%;
+  padding-top: 40px;
+  overflow-x: hidden;
+  overflow-y: scroll; /* Habilita el scroll solo en el eje vertical */
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scroll-behavior: smooth;
+}
+
+.list-wrapper::-webkit-scrollbar {
+  display: none; /* Oculta el scrollbar en navegadores basados en WebKit */
+}
+
+
+.background-wrapper {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color:black;
+
+}
