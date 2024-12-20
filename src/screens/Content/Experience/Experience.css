@@ -1,0 +1,11 @@
+.cronoCell {
+    display: flex;
+    flex-direction:row;
+}
+
+.cronoCell>p {
+    font-size: 18px;
+    color: var(--secondary-txt-color);
+    padding:18px 12px 0px 12px;
+    width: 80px;
+}

@@ -1,10 +1,10 @@
 import './Cell.css';
 
-export const Cell = ({title, subtitle, link}) => {
+export const Cell = ({titleJSX, subtitle}) => {
   return (
-      <a className='cell-wrapper' href={link}>
-         <p className='text-body-regular'>{title}</p>
+      <div className='cell-wrapper'>
+         {titleJSX}
          <p className='text-small-regular'>{subtitle}</p>
-      </a>
+      </div>
   )
 }

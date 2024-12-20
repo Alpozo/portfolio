@@ -2,36 +2,59 @@
 @import './normalize.css';
 
 :root {
-  --primary-bg: #1E1E1E;
-  --secondary-bg: rgba(0, 0, 0, 0.5); /* #000 con 50% */
-  --tertiary-bg: rgba(255, 255, 255, 0.1); /* #FFF con 10% */
-  --primary-txt: #EDEDED;
-  --secondary-txt: rgba(255, 255, 255, 0.5); /* #FFF con 50% */
+  --primary-bg-color: #1E1E1E;
+  --secondary-bg-color: rgba(0, 0, 0, 0.2); /* #000 con 50% */
+  --tertiary-bg-color: rgba(255, 255, 255, 0.1); /* #FFF con 10% */
+  --primary-txt-color: #EDEDED;
+  --secondary-txt-color: rgba(255, 255, 255, 0.5); /* #FFF con 50% */
+  --quary-mobile-jump: 1080px;
+}
+
+.font-body-regular {
+  font-family: "Source Sans 3", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.font-small-regular {
+  font-family: "Source Sans 3", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 32px;
+  color:var(--secondary-txt-color);
+
 }
 
 body {
-  background-color: var(--primary-bg);
-  color: var(--primary-txt);
+  background-color: var(--primary-bg-color);
+  color: var(--primary-txt-color);
   font-family: "Source Sans 3", Arial, sans-serif;
   flex:1;
+}
+
+a {
+  text-decoration: underline;
+  color: var(--primary-txt-color);
+}
+
+a:hover {
+  color: var(--secondary-txt-color)
 }
 
 p {
   margin: 0; 
 }
 
-
 /* colors */
 .secondary-bg {
-  background-color: var(--secondary-bg);
+  background-color: var(--secondary-bg-color);
 }
 
 .tertiary-bg {
-  background-color: var(--tertiary-bg);
+  background-color: var(--tertiary-bg-color);
 }
 
 .secondary-txt {
-  color: var(--secondary-txt);
+  color: var(--secondary-tx-color);
 }
 
 
@@ -51,7 +74,7 @@ p {
 .text-small-regular {
   font-size: 16px;
   line-height: 16px;
-  color: var(--secondary-txt);
+  color: var(--secondary-txt-color);
 }
 
 
@@ -73,10 +96,17 @@ p {
   gap: 0px;
 }
 
+.content-wrapper {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; 
+}
+
 .list-wrapper {
   width: 100%;
   height: 100%;
   padding-top: 40px;
+  padding-bottom: 128px;
   overflow-x: hidden;
   overflow-y: scroll; /* Habilita el scroll solo en el eje vertical */
   display: flex;
@@ -98,4 +128,17 @@ p {
   overflow: hidden;
   background-color:black;
 
+}
+
+
+@media (max-width:980px) {
+
+.background-wrapper {
+  display: none;
+}
+
+.main-wrapper {
+  width: 100%;
+  padding: 24px 24px 0px 24px;
+}
 }
