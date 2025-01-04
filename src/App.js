@@ -14,8 +14,8 @@ import { addQueryParam } from './utils/queryParams'
 export const App = () => {
   const params = new URLSearchParams(window.location.search);
   const tabURL = params.get("view");
-  const [ activeTab, setActiveTab ] = useState(TABS.findIndex((tab) => tab === tabURL) || 0);
-
+  const [ activeTab, setActiveTab ] = useState(Math.max(TABS.findIndex((tab) => tab === tabURL), 0));
+  console.log({ activeTab })
   const [ hoveredItem, setHoveredItem ] = useState(null);
 
   const handleHover = (item) => {
