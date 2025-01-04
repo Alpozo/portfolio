@@ -1,0 +1,7 @@
+.heading-3 {
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: normal;
+    margin-bottom: 16px;
+    color: var(--secondary-txt-color);
+}

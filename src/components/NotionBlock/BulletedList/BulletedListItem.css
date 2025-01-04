@@ -1,0 +1,11 @@
+.bulleted-list-item {
+    font-size: 16px;
+    line-height: 32px;
+    margin-bottom: 8px;
+    list-style-position: outside;
+
+}
+
+.bold {
+    font-weight: bold;
+}

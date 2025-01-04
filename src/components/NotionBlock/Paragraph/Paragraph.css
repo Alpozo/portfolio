@@ -1,0 +1,9 @@
+.paragraph {
+    font-size: 18px;
+    line-height: 32px;
+    margin-bottom: 24px;
+}
+
+.link {
+    text-decoration: underline;
+}

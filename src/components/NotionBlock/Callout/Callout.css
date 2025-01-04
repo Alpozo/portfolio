@@ -1,0 +1,35 @@
+.article-summary-container {
+    background-color: var(--secondary-bg-color);
+    padding: 24px;
+    border-radius: 8px;
+    margin-bottom: 28px;
+}
+
+.callout-container {
+    background-color: var(--secondary-bg-color);
+    padding: 24px;
+    border-radius: 16px;
+    margin-bottom: 28px;
+
+}
+
+.callout-icon {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    flex: 0
+}
+
+.article-summary-title {
+    display: flex;
+    gap: 8px;
+    font-size: 16px;
+    line-height: 16px;
+    color: var(--secondary-txt-color);
+    margin-bottom: 12px;
+}
+
+.article-summary-description {
+    font-size: 16px;
+    line-height: 32px;
+}
