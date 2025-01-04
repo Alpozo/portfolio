@@ -8,22 +8,21 @@ import { NotionBlock } from "../../components/NotionBlock/NotionBlock";
 import { fetchArticle } from '../../api/fetchArticle';
 import { transformBlocks } from "../../utils/notion";
 
-
 export const Article = ({ article, isModalOpen, onCloseModal }) => {
+    const params = new URLSearchParams(window.location.search);
+    const postURL = params.get("post");
+
     const [ blocks, setBlocks ] = useState('')
     const [ isLoading, setIsLoading ] = useState(false);
 
     useEffect(() => {
-        if (!article?.id) return
+        const articleId = article?.id || postURL
+        if (!articleId) return
         setIsLoading(true);
 
-        fetchArticle(article.id).then((data) => {
+        fetchArticle(articleId).then((data) => {
             if (data) {
-
                 setBlocks(data);
-                const uniqueTypes = [ ...new Set(data?.map((item) => item.type)) ];
-                console.log({ data })
-                console.log({ uniqueTypes })
             }
         }).finally(() => {
             setIsLoading(false);

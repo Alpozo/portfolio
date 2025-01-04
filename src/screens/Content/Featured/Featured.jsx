@@ -6,10 +6,13 @@ import { Cell } from '../../../components/Cell/Cell';
 import { Article } from '../../../screens/Article/Article'
 
 import { fetchArticles } from '../../../api/fetchArticles';
-import { addQueryParam } from '../../../utils/queryParams'
+import { addQueryParam, removeQueryParam } from '../../../utils/queryParams'
 
 export const Featured = ({ onHoverItem, onLeaveImage }) => {
-  const [ isModalOpen, setIsModalOpen ] = useState(false)
+  const params = new URLSearchParams(window.location.search);
+  const postURL = params.get("post");
+
+  const [ isModalOpen, setIsModalOpen ] = useState(!!postURL)
   const [ article, setArticle ] = useState('')
   const [ articles, setArticles ] = useState([]);
 
@@ -24,6 +27,7 @@ export const Featured = ({ onHoverItem, onLeaveImage }) => {
   const articlesList = articles.map(({ id, properties }) => {
     return {
       id,
+      queryParam: properties?.ID.rich_text[ 0 ]?.text?.content,
       title: properties?.Name.title[ 0 ]?.text?.content,
       subtitle: properties?.Tags.rich_text[ 0 ]?.text?.content,
       file: properties?.Cover?.files[ 0 ]?.file?.url,
@@ -39,11 +43,12 @@ export const Featured = ({ onHoverItem, onLeaveImage }) => {
   const handleCloseModal = () => {
     setIsModalOpen(false)
     setArticle(undefined)
+    removeQueryParam("post")
   }
 
   const onClickArticle = (article) => {
     openModal(article)
-    addQueryParam("article", article.id)
+    addQueryParam("post", article?.id)
   }
 
   return (

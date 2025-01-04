@@ -15,7 +15,6 @@ export const fetchArticle = async (pageId) => {
     }
 
     const data = JSON.parse(responseText);
-    console.log("@@@:", data);
 
     return data.results;
 };

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "./Tabs.css";
 import { TABS } from './constants';
+import { capitalize } from '../../utils/string'
 
 export const Tabs = ({ activeTab, onTabChange }) => {
 
@@ -36,7 +37,7 @@ export const Tabs = ({ activeTab, onTabChange }) => {
             onClick={() => onTabChange(index)} // Cambia la pestaña activa
             ref={(el) => (tabsRef.current[ index ] = el)} // Referencia para el indicador
           >
-            {tab}
+            {capitalize(tab)}
           </button>
         ))}
         {/* Barra dinámica */}

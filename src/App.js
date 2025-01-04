@@ -13,8 +13,8 @@ import { addQueryParam } from './utils/queryParams'
 
 export const App = () => {
   const params = new URLSearchParams(window.location.search);
-  const urlTab = params.get("tab");
-  const [ activeTab, setActiveTab ] = useState(TABS.findIndex((tab) => tab === urlTab) || 0);
+  const tabURL = params.get("view");
+  const [ activeTab, setActiveTab ] = useState(TABS.findIndex((tab) => tab === tabURL) || 0);
 
   const [ hoveredItem, setHoveredItem ] = useState(null);
 
@@ -28,13 +28,12 @@ export const App = () => {
 
   const onTabChange = (currentTab) => {
     setActiveTab(currentTab)
-    addQueryParam("tab", TABS[ currentTab ])
+    addQueryParam("view", TABS[ currentTab ])
   }
 
   return (
     <>
       <div className="body-wrapper">
-
         <div className="main-wrapper">
           <Header />
           <Tabs activeTab={activeTab} onTabChange={(currentTab) => onTabChange(currentTab)} />
@@ -57,7 +56,6 @@ export const App = () => {
                 </video>
                 :
                 <img src={hoveredItem?.file} alt='' />}
-
             </div>
           )}
         </div>
