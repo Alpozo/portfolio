@@ -1,5 +1,5 @@
 export const fetchArticles = async () => {
-    const API_URL = `https://cors-anywhere.herokuapp.com/https://api.notion.com/v1/databases/${process.env.REACT_APP_NOTION_DATABASE_ID}/query`;
+    const API_URL = `https://api.notion.com/v1/databases/${process.env.REACT_APP_NOTION_DATABASE_ID}/query`;
 
     const response = await fetch(API_URL, {
         method: "POST",
