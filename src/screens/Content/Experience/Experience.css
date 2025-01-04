@@ -1,11 +1,20 @@
 .cronoCell {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
+
+    a {
+        text-decoration: underline;
+    }
+
+    a:hover {
+        color: var(--secondary-txt-color);
+
+    }
 }
 
 .cronoCell>p {
     font-size: 18px;
     color: var(--secondary-txt-color);
-    padding:18px 12px 0px 12px;
+    padding: 18px 12px 0px 12px;
     width: 80px;
 }

@@ -1,22 +1,21 @@
-import React, { useEffect } from 'react';
-import { ModalCell } from '../../../components/ModalCell/ModalCell';
+import React, { useState, useEffect } from 'react';
+import { Cell } from '../../../components/Cell/Cell';
 import './Connect.css';
 
 export const Connect = () => {
+  const [toastVisible, setToastVisible] = useState(false); // Estado para controlar la visibilidad del toast
+
   useEffect(() => {
-    // Agregar el script de Calendly
     const script = document.createElement('script');
     script.src = 'https://assets.calendly.com/assets/external/widget.js';
     script.async = true;
     document.body.appendChild(script);
 
-    // Verificar que el script se cargó correctamente
     script.onload = () => {
       console.log('Calendly script loaded successfully');
     };
 
     return () => {
-      // Limpiar el script al desmontar el componente
       document.body.removeChild(script);
     };
   }, []);
@@ -31,36 +30,59 @@ export const Connect = () => {
     }
   };
 
+  const handleCopyEmail = () => {
+    const email = "alejandrodelpozo91@gmail.com";
+    navigator.clipboard
+      .writeText(email)
+      .then(() => {
+        setToastVisible(true); // Mostrar el toast
+        setTimeout(() => setToastVisible(false), 2000); // Ocultarlo después de 2 segundos
+      })
+      .catch((err) => {
+        console.error('Failed to copy email: ', err);
+      });
+  };
+
   return (
     <div className='list-wrapper'>
       <link
         href="https://assets.calendly.com/assets/external/widget.css"
         rel="stylesheet"
       />
-      <button
+      <p className='connect-txt font-body-regular'>
+        I'm always open to new opportunities, adventures, or friends. If you
+        have something to share, reach me out!
+      </p>
+      <Cell
+        title="Calendly"
+        subtitle="Let’s meet each other on a 30’ call"
+        interactive={true}
         onClick={handleCalendlyPopup}
-        style={{
-          backgroundColor: '#007bff',
-          color: 'white',
-          border: 'none',
-          padding: '10px 20px',
-          borderRadius: '5px',
-          cursor: 'pointer',
-        }}
-      >
-        Schedule time with me
-      </button>
+      />
+      <Cell
+        title="alejandrodelpozo91@gmail.com"
+        subtitle="Send me an email"
+        interactive={true}
+        onClick={handleCopyEmail}
+      />
+      <Cell
+        title="LinkedIn"
+        subtitle="Write me a message"
+        interactive={true}
+        link="https://www.linkedin.com/in/alejandro-del-pozo-lozano-b53812b3/"
+      />
+      <Cell
+        title="Instagram"
+        subtitle="Take a look to my photos"
+        interactive={true}
+        link="https://www.instagram.com/alejandro.delpozo/"
+      />
 
-      <div>
-          
-            <p className='connect-txt font-body-regular'>I'm always open to new opportunities, adventures, or friends. If you have something to share, reach me out!</p>
-            <ModalCell title="Calendy" subtitle="Let’s meet each other on a 30’ call" link={"http://www.google.com"}/>
-            <ModalCell title="seriously@alejandro.wtf" subtitle="Send me an email" link={"http://www.google.com"}/>
-            <ModalCell title="LinkedIn" subtitle="Write me a message" link={"http://www.google.com"}/>
-            <ModalCell title="Instagram" subtitle="Take a look to my photos" link={"http://www.google.com"}/>
-           
-         
-       </div>
+      {toastVisible && (
+        <div className="toast">
+          Email copied to clipboard!
+        </div>
+      )}
     </div>
   );
 };
