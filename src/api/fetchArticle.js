@@ -1,11 +1,9 @@
 export const fetchArticle = async (pageId) => {
-    const API_URL = `https://api.notion.com/v1/blocks/${pageId}/children`;
+    const API_URL = `https://notion-api-tan.vercel.app/api/notion?pageId=${pageId}`;
 
     const response = await fetch(API_URL, {
         method: "GET",
         headers: {
-            "Authorization": `Bearer ${process.env.REACT_APP_NOTION_API_KEY}`,
-            "Notion-Version": "2022-06-28",
             "Content-Type": "application/json",
         },
     });

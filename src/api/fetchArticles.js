@@ -1,14 +1,15 @@
 export const fetchArticles = async () => {
-    const API_URL = `https://api.notion.com/v1/databases/${process.env.REACT_APP_NOTION_DATABASE_ID}/query`;
+    const API_URL = "https://notion-api-tan.vercel.app/api/notion"
 
     const response = await fetch(API_URL, {
         method: "POST",
         headers: {
-            "Authorization": `Bearer ${process.env.REACT_APP_NOTION_API_KEY}`,
-            "Notion-Version": "2022-06-28",
-            "Content-Type": "application/json",
+            "Content-Type": "application/json"
         },
-        body: JSON.stringify({}),
+        body: JSON.stringify({
+            databaseId: process.env.REACT_APP_NOTION_DATABASE_ID,
+            query: { page_size: 10 },
+        }),
     });
 
     const responseText = await response.text();
