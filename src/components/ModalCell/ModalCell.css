@@ -5,21 +5,26 @@
     background-color: none;
     transition: transform 0.8s ease, background-color 0.2s ease;
 
+    a {
+        text-decoration: none;
+    }
 }
 
 .modal-cell-wrapper:hover {
-    background-color:var(--secondary-bg-color);
+    background-color: var(--secondary-bg-color);
+    cursor: pointer;
+
 }
 
 
 @media (max-width:980px) {
 
     .modal-cell-wrapper {
-    background-color:var(--secondary-bg-color);
-}
+        background-color: var(--secondary-bg-color);
+    }
 
-.modal-cell-wrapper:hover {
-    background-color:var(--tertiary-bg-color);
-}
+    .modal-cell-wrapper:hover {
+        background-color: var(--tertiary-bg-color);
+    }
 
 }

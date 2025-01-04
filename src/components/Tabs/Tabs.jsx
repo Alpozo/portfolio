@@ -1,14 +1,15 @@
 import React, { useEffect, useRef } from "react";
 import "./Tabs.css";
+import { TABS } from './constants';
 
-export const Tabs = ({ activeTab, onTabChange }) => { // Recibe props
+export const Tabs = ({ activeTab, onTabChange }) => {
+
   const tabsRef = useRef([]);
-  const tabs = ["Featured", "Experience", "About", "Connect"];
-  const [indicatorStyle, setIndicatorStyle] = React.useState({});
+  const [ indicatorStyle, setIndicatorStyle ] = React.useState({});
 
   useEffect(() => {
     const updateIndicator = () => {
-      const activeTabElement = tabsRef.current[activeTab];
+      const activeTabElement = tabsRef.current[ activeTab ];
       if (activeTabElement) {
         setIndicatorStyle({
           width: `${activeTabElement.offsetWidth}px`, // Ancho dinámico
@@ -23,17 +24,17 @@ export const Tabs = ({ activeTab, onTabChange }) => { // Recibe props
     return () => {
       window.removeEventListener("resize", updateIndicator);
     };
-  }, [activeTab]);
+  }, [ activeTab ]);
 
   return (
     <div className="tabs-container">
       <div className="tabs">
-        {tabs.map((tab, index) => (
+        {TABS.map((tab, index) => (
           <button
             key={index}
             className={`tab-item ${activeTab === index ? "active" : ""}`}
             onClick={() => onTabChange(index)} // Cambia la pestaña activa
-            ref={(el) => (tabsRef.current[index] = el)} // Referencia para el indicador
+            ref={(el) => (tabsRef.current[ index ] = el)} // Referencia para el indicador
           >
             {tab}
           </button>
