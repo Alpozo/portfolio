@@ -9,6 +9,10 @@ import { FeaturedSkeleton } from './FeaturedSkeleton';
 import { fetchArticles } from '../../../api/fetchArticles';
 import { addQueryParam, removeQueryParam } from '../../../utils/queryParams'
 
+import Insights from '../../../assets/featured/insights.mp4'
+import Wondo from '../../../assets/featured/wondo.mp4'
+import Ontruck from '../../../assets/featured/illustration.gif'
+
 export const Featured = ({ onHoverItem, onLeaveImage }) => {
   const params = new URLSearchParams(window.location.search);
   const postURL = params.get("post");
@@ -26,6 +30,14 @@ export const Featured = ({ onHoverItem, onLeaveImage }) => {
     });
   }, []);
 
+
+  const ASSETS = {
+    "dc47a7af-7524-4fd6-8b07-3c1b2ccff2c5": { video: Insights },
+    "dce5de0d-d4dc-4b46-95d8-f685b2e9f852": { video: Insights },
+    "30f01715-c8b9-4480-b2d7-279a10da3af7": { video: Wondo },
+    "c1445b97-84aa-47ab-a256-63a7de787dc5": { image: Ontruck }
+  }
+
   const articlesList = articles.map(({ id, properties }) => {
     return {
       id,
@@ -34,6 +46,7 @@ export const Featured = ({ onHoverItem, onLeaveImage }) => {
       subtitle: properties?.Tags.rich_text[ 0 ]?.text?.content,
       file: properties?.Cover?.files[ 0 ]?.file?.url,
       fileType: properties?.Cover?.files[ 0 ]?.name?.split('.')?.[ 1 ],
+      localFile: ASSETS[ id ]
     }
   })
 

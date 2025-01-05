@@ -37,6 +37,29 @@ export const App = () => {
     animate()
   }
 
+  const NotionFile = () => {
+    hoveredItem?.fileType === 'mp4'
+      ?
+      <video width="auto" height="auto" autoPlay loop muted>
+        <source src={hoveredItem?.file} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      :
+      <img src={hoveredItem?.file} alt='' />
+  }
+
+  const LocalFile = () => {
+    return hoveredItem?.localFile?.video
+      ?
+      <video width="auto" height="auto" autoPlay loop muted>
+        <source src={hoveredItem?.localFile?.video} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      :
+      <img src={hoveredItem?.localFile?.image} alt='' />
+  }
+
+
   return (
     <>
       <div className="body-wrapper">
@@ -54,13 +77,7 @@ export const App = () => {
           <ImageBackground />
           {hoveredItem && (
             <div className="hovered-image-wrapper">
-              {hoveredItem.fileType === 'mp4' ?
-                <video width="auto" height="auto" autoPlay loop muted>
-                  <source src={hoveredItem?.file} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-                :
-                <img src={hoveredItem?.file} alt='' />}
+              {hoveredItem?.localFile ? <LocalFile /> : <NotionFile />}
             </div>
           )}
           {activeTab === 2 && <Carousel />}
