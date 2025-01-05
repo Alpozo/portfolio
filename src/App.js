@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Header } from './components/Header/Header';
 import { Content } from './screens/Content/Content';
 import { Tabs } from './components/Tabs/Tabs';
+import { Carousel } from './components/Carousel/Carousel';
 import { ImageBackground } from './screens/VideoBackground/VideoBackground';
 import { TABS } from './components/Tabs/constants';
 import { addQueryParam } from './utils/queryParams'
@@ -62,6 +63,9 @@ export const App = () => {
                 <img src={hoveredItem?.file} alt='' />}
             </div>
           )}
+          {
+            activeTab === 2 && <Carousel />
+          }
         </div>
       </div>
     </>
