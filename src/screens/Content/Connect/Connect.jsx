@@ -3,7 +3,7 @@ import { Cell } from '../../../components/Cell/Cell';
 import './Connect.css';
 
 export const Connect = () => {
-  const [toastVisible, setToastVisible] = useState(false); // Estado para controlar la visibilidad del toast
+  const [ toastVisible, setToastVisible ] = useState(false);
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -23,7 +23,7 @@ export const Connect = () => {
   const handleCalendlyPopup = () => {
     if (window.Calendly) {
       window.Calendly.initPopupWidget({
-        url: 'https://calendly.com/alejandrodelpozo91/30min',
+        url: 'https://calendly.com/alejandrodelpozo91/1h-meeting',
       });
     } else {
       console.error('Calendly is not available yet.');
@@ -35,8 +35,8 @@ export const Connect = () => {
     navigator.clipboard
       .writeText(email)
       .then(() => {
-        setToastVisible(true); // Mostrar el toast
-        setTimeout(() => setToastVisible(false), 2000); // Ocultarlo después de 2 segundos
+        setToastVisible(true);
+        setTimeout(() => setToastVisible(false), 2000);
       })
       .catch((err) => {
         console.error('Failed to copy email: ', err);
