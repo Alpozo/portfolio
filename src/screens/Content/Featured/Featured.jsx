@@ -15,6 +15,7 @@ export const Featured = ({ onHoverItem, onLeaveImage }) => {
   const [ isModalOpen, setIsModalOpen ] = useState(!!postURL)
   const [ article, setArticle ] = useState('')
   const [ articles, setArticles ] = useState([]);
+  const [ hoveredIndex, setHoveredIndex ] = useState(null);
 
   useEffect(() => {
     fetchArticles().then((data) => {
@@ -60,8 +61,14 @@ export const Featured = ({ onHoverItem, onLeaveImage }) => {
 
       <div className="list-wrapper">
         {articlesList.map((item, index) => (
-          <div key={index} onMouseEnter={() => onHoverItem(item)} onMouseLeave={onLeaveImage} onClick={() => onClickArticle(item)}>
-            <Cell title={item.title} subtitle={item.subtitle} interactive={true} />
+          <div key={index} onMouseEnter={() => {
+            setHoveredIndex(index)
+            onHoverItem(item)
+          }} onMouseLeave={() => {
+            onLeaveImage()
+            setHoveredIndex(null);
+          }} onClick={() => onClickArticle(item)}>
+            <Cell title={item.title} subtitle={item.subtitle} interactive={true} isHovered={hoveredIndex === index} />
           </div>
         ))}
       </div>

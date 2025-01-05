@@ -8,7 +8,12 @@
     }
 }
 
-.interactive-cell:hover {
-    background-color: var(--secondary-bg-color);
-    cursor: pointer;
+
+.interactive-cell {
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: var(--secondary-bg-color);
+        cursor: pointer;
+    }
 }
