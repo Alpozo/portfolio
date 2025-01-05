@@ -1,10 +1,7 @@
 import Icon from '../Icon/Icon';
 import './Modal.css';
-// import closeIcon from "../../assets/profile-picture.jpg";
-import closeIcon from "../../assets/icons/close.svg";
-
 export const Modal = ({ isOpen, onClose, children }) => {
-    if (!isOpen) return null; // Si el modal no está abierto, no se renderiza nada
+    if (!isOpen) return null;
 
     return (
         <div className="modal-overlay" onClick={onClose}>

@@ -1,4 +1,15 @@
+.about-wrapper {
+    overflow: scroll;
+    height: 100%;
+}
+
 .about-txt {
     padding: 40px 12px 128px;
     max-width: 600px;
+}
+
+.section-title {
+    font-weight: bold;
+    line-height: 45px;
+    margin-top: 20px;
 }
