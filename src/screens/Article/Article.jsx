@@ -7,6 +7,7 @@ import { Loader } from '../../components/Loader/Loader'
 import { NotionBlock } from "../../components/NotionBlock/NotionBlock";
 import { fetchArticle } from '../../api/fetchArticle';
 import { transformBlocks } from "../../utils/notion";
+import { ArticleSkeleton } from './ArticleSkeleton'
 
 export const Article = ({ article, isModalOpen, onCloseModal }) => {
     const params = new URLSearchParams(window.location.search);
@@ -36,7 +37,7 @@ export const Article = ({ article, isModalOpen, onCloseModal }) => {
     return (
         <Modal key={article?.id} isOpen={isModalOpen} onClose={onCloseModal}>
             {isLoading ?
-                <div className="loading-wrapper"><Loader /></div>
+                <ArticleSkeleton />
                 :
                 <div className="article-wrapper">
                     <h1>{article?.title}</h1>

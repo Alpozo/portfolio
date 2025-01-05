@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 // Components
 import { Cell } from '../../../components/Cell/Cell';
 import { Article } from '../../../screens/Article/Article'
+import { FeaturedSkeleton } from './FeaturedSkeleton';
 
 import { fetchArticles } from '../../../api/fetchArticles';
 import { addQueryParam, removeQueryParam } from '../../../utils/queryParams'
@@ -60,27 +61,24 @@ export const Featured = ({ onHoverItem, onLeaveImage }) => {
       />
 
       <div className="list-wrapper">
-        {articlesList.map((item, index) => (
-          <div key={index} onMouseEnter={() => {
-            setHoveredIndex(index)
-            onHoverItem(item)
-          }} onMouseLeave={() => {
-            onLeaveImage()
-            setHoveredIndex(null);
-          }} onClick={() => onClickArticle(item)}>
+        {articlesList.length ? articlesList.map((item, index) => (
+          <div key={index} onMouseEnter={
+            () => {
+              setHoveredIndex(index)
+              onHoverItem(item)
+            }}
+            onMouseLeave={() => {
+              onLeaveImage()
+              setHoveredIndex(null);
+            }}
+            onClick={() => onClickArticle(item)}>
             <Cell title={item.title} subtitle={item.subtitle} interactive={true} isHovered={hoveredIndex === index} />
           </div>
-        ))}
+        ))
+          :
+          <FeaturedSkeleton />
+        }
       </div>
-
-      <div className="list-wrapper">
-        {articlesList.map((article) => (
-          <div key={article.id}>
-            <h2>{article.title}</h2>
-            <p>{article.content}</p>
-          </div>
-        ))}
-      </div >
     </>
   );
 };

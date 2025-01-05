@@ -1,0 +1,44 @@
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton {
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(90deg,
+      #1e1e1e 25%,
+      #2a2a2a 50%,
+      #1e1e1e 75%);
+  background-size: 200% 100%;
+  animation: loading 3s infinite ease-in-out;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 32px;
+}
+
+.paragraph-skeleton {
+  height: 80px;
+  animation-delay: 0.2s;
+}
+
+.line-skeleton {
+  min-width: 600px;
+  height: 32px;
+  animation-delay: 0.3s;
+}
+
+.image-skeleton {
+  min-width: 600px;
+  height: 386px;
+}
+
+.skeleton-label {
+  font-size: 16px;
+}
