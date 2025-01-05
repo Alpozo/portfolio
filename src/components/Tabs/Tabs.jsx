@@ -34,8 +34,8 @@ export const Tabs = ({ activeTab, onTabChange }) => {
           <button
             key={index}
             className={`tab-item ${activeTab === index ? "active" : ""}`}
-            onClick={() => onTabChange(index)} // Cambia la pestaña activa
-            ref={(el) => (tabsRef.current[ index ] = el)} // Referencia para el indicador
+            onClick={() => onTabChange(index)}
+            ref={(el) => (tabsRef.current[ index ] = el)}
           >
             {capitalize(tab)}
           </button>

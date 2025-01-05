@@ -1,7 +1,5 @@
 import './App.css';
 import './screens/Articles/articles.css';
-
-import React from 'react';
 import { useState } from 'react';
 import { Header } from './components/Header/Header';
 import { Content } from './screens/Content/Content';
@@ -10,12 +8,11 @@ import { ImageBackground } from './screens/VideoBackground/VideoBackground';
 import { TABS } from './components/Tabs/constants';
 import { addQueryParam } from './utils/queryParams'
 
-
 export const App = () => {
   const params = new URLSearchParams(window.location.search);
   const tabURL = params.get("view");
   const [ activeTab, setActiveTab ] = useState(Math.max(TABS.findIndex((tab) => tab === tabURL), 0));
-  console.log({ activeTab })
+  const [ isAnimating, setIsAnimating ] = useState(false);
   const [ hoveredItem, setHoveredItem ] = useState(null);
 
   const handleHover = (item) => {
@@ -26,9 +23,17 @@ export const App = () => {
     setHoveredItem(null);
   };
 
+  const animate = () => {
+    setIsAnimating(true);
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 300);
+  }
+
   const onTabChange = (currentTab) => {
     setActiveTab(currentTab)
     addQueryParam("view", TABS[ currentTab ])
+    animate()
   }
 
   return (
@@ -37,13 +42,12 @@ export const App = () => {
         <div className="main-wrapper">
           <Header />
           <Tabs activeTab={activeTab} onTabChange={(currentTab) => onTabChange(currentTab)} />
-
           <Content
             activeTab={activeTab}
+            isAnimating={isAnimating}
             onHoverItem={handleHover}
             onLeaveImage={handleLeave}
           />
-
         </div>
         <div className="background-wrapper">
           <ImageBackground />
