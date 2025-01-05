@@ -3,9 +3,26 @@
     height: 100%;
 }
 
+.carousel-wrapper {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+@media(min-width: 980px) {
+    .carousel-wrapper {
+        display: none
+    }
+
+    .about-txt {
+        padding: 40px 12px 128px;
+        margin-top: 40px;
+
+        max-width: 600px;
+    }
+}
+
 .about-txt {
-    padding: 40px 12px 128px;
-    max-width: 600px;
+    padding-top: 0;
 }
 
 .section-title {

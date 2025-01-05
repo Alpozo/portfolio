@@ -63,9 +63,7 @@ export const App = () => {
                 <img src={hoveredItem?.file} alt='' />}
             </div>
           )}
-          {
-            activeTab === 2 && <Carousel />
-          }
+          {activeTab === 2 && <Carousel />}
         </div>
       </div>
     </>

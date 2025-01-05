@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 
 import './Article.css';
 import { Modal } from '../../components/Modal/Modal'
-import { Loader } from '../../components/Loader/Loader'
 import { NotionBlock } from "../../components/NotionBlock/NotionBlock";
 import { fetchArticle } from '../../api/fetchArticle';
 import { transformBlocks } from "../../utils/notion";

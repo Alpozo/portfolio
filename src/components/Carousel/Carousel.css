@@ -3,29 +3,38 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto;
   position: relative;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .carousel-image-wrapper {
   width: 100%;
-  height: 500px;
   overflow: hidden;
   border-radius: 8px;
+  margin-bottom: 16px;
+  max-height: 520px;
+  display: flex;
+  justify-content: center;
+
+  & img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
 }
 
-.carousel-image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
+@media(max-width: 980px) {
+  .carousel {
+    padding: 0
+  }
 }
 
 .carousel-dots {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
 }
 
 .dot {
@@ -34,11 +43,12 @@
   border-radius: 50%;
   margin: 0 5px;
   border: none;
-  background-color: #ccc;
+  background-color: #FFF;
+  opacity: 0.5;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: opacity 0.3s;
 }
 
 .dot.active {
-  background-color: #333;
+  opacity: 1;
 }
