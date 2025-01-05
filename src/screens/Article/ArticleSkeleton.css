@@ -1,0 +1,6 @@
+.article-skeleton-wrapper {
+  padding-top: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}

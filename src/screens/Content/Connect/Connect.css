@@ -2,3 +2,9 @@
     padding: 0px 12px;
     max-width: 600px;
 }
+
+@media (min-width: 700px) and (max-width: 1250px) {
+    .calendly-popup {
+        min-height: 960px;
+    }
+}
