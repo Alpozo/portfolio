@@ -29,15 +29,20 @@
 }
 
 .line-skeleton {
-  min-width: 600px;
+  width: 100%;
   height: 32px;
   animation-delay: 0.3s;
 }
 
 .image-skeleton {
-  min-width: 600px;
+  width: 100%;
   height: 386px;
+
+  @media (max-width:980px) {
+    height: 200px;
+  }
 }
+
 
 .skeleton-label {
   font-size: 16px;
