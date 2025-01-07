@@ -79,6 +79,14 @@ p {
   height: 100vh;
   overflow: hidden;
   display: flex;
+
+  @media (max-width:575px) {
+    justify-content: center;
+  }
+
+  @media (min-width:576px) and (max-width:980px) {
+    justify-content: center;
+  }
 }
 
 .main-wrapper {
@@ -88,6 +96,20 @@ p {
   padding: 64px 128px 0px 128px;
   flex-direction: column;
   gap: 0px;
+
+  @media (max-width:575px) {
+    padding: 24px 24px 0px 24px;
+  }
+
+  @media (min-width:576px) and (max-width:980px) {
+    padding: 64px 24px 0px 24px;
+  }
+
+  @media (max-width:980px) {
+    min-width: 390px;
+    max-width: 576px;
+    width: 100%;
+  }
 }
 
 .list-wrapper {
@@ -279,11 +301,6 @@ p {
 
   .background-wrapper {
     display: none;
-  }
-
-  .main-wrapper {
-    width: 100%;
-    padding: 24px 24px 0px 24px;
   }
 
   .toast {
