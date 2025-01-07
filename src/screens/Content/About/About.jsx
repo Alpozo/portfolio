@@ -15,6 +15,7 @@ export const About = () => {
           <p>I’ve always been a creative person, but I’ve also had a love for the logic of math and the thrill of solving problems.</p>
           <p className='section-title'>Creativity</p>
           <p>As a kid, I loved watching a craft show for children with my mom called Art Attack. I was obsessed with making things, especially when it involved the show’s famous “Art Attack mixture” – a gooey blend of white glue, water, and newspaper or paper towels. In my free time, I’d often draw in a comic or manga style, letting my imagination run wild.</p>
+          <br />
           <p>Nowadays I really enjoy taking pictures with my Fujifilm camera (Astrophotography and Street photography)</p>
           <p className='section-title'>Problem-solving</p>
           <p>Math was always one of my strengths, and for a long time, I dreamed of becoming an architect. I had a knack for technical drawing and spatial reasoning. But life had other plans – I ended up enrolling in an arts-focused high school and later pursued a degree in Graphic Design.</p>
