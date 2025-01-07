@@ -4,10 +4,10 @@ import { Carousel } from '../../../components/Carousel/Carousel';
 export const About = () => {
   return (
     <>
-      <div className='carousel-wrapper'>
-        <Carousel />
-      </div>
       <div className='about-wrapper font-body-regular about-txt'>
+        <div className='carousel-wrapper'>
+          <Carousel />
+        </div>
         <p >Hi there 👋🏻</p>
         <p>I’m Ale, a Product Designer based in Madrid.</p>
         <br />
