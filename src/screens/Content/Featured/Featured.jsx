@@ -8,6 +8,7 @@ import { FeaturedSkeleton } from './FeaturedSkeleton';
 
 import { fetchArticles } from '../../../api/fetchArticles';
 import { addQueryParam, removeQueryParam } from '../../../utils/queryParams'
+import { isMobile } from '../../../utils/mediaquery'
 
 import RighthProblem from '../../../assets/featured/right-problem-cover.png'
 import Insights from '../../../assets/featured/insights.mp4'
@@ -66,6 +67,9 @@ export const Featured = ({ onHoverItem, onLeaveImage }) => {
     addQueryParam("post", article?.id)
   }
 
+
+  const IS_MOBILE = isMobile()
+
   return (
     <>
       <Article article={article}
@@ -77,10 +81,12 @@ export const Featured = ({ onHoverItem, onLeaveImage }) => {
         {articlesList.length ? articlesList.map((item, index) => (
           <div key={index} onMouseEnter={
             () => {
+              if (IS_MOBILE) return
               setHoveredIndex(index)
               onHoverItem(item)
             }}
             onMouseLeave={() => {
+              if (IS_MOBILE) return
               onLeaveImage()
               setHoveredIndex(null);
             }}
