@@ -33,7 +33,7 @@
     color: var(--primary-text-color);
 
     @media (max-width:980px) {
-        top: 20px;
+        top: 24px;
         right: 16px;
 
     }
