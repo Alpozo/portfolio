@@ -79,7 +79,6 @@ p {
   height: 100dvh;
   overflow: hidden;
   display: flex;
-  border: 1px solid red;
 
   @media (max-width:575px) {
     justify-content: center;
