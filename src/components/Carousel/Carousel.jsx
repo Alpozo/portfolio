@@ -19,7 +19,7 @@ export const Carousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 2500);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
