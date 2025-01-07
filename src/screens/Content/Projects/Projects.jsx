@@ -10,7 +10,7 @@ import { fetchArticles } from '../../../api/fetchArticles';
 import { addQueryParam, removeQueryParam } from '../../../utils/queryParams'
 import { isMobile } from '../../../utils/mediaquery'
 
-import RighthProblem from '../../../assets/projects/right-problem-cover.png'
+import RighthProblem from '../../../assets/projects/right-problem-cover.jpeg'
 import Insights from '../../../assets/projects/insights.mp4'
 import Wondo from '../../../assets/projects/wondo.mp4'
 import Ontruck from '../../../assets/projects/illustration.gif'
