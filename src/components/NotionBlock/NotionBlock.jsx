@@ -42,7 +42,7 @@ export const NotionBlock = ({ type, image, callout, heading_1, heading_2, headin
     ),
     'column_list': <ColumnList />,
     'quote': <Quote textGroup={quote?.rich_text} />,
-    'video': <video className='video' width="600" controls>
+    'video': <video className='video' width="100%" max-width="600" controls>
       <source src={video?.file?.url} type="video/mp4" />
       Your browser does not support the video tag.
     </video>
