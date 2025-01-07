@@ -1,9 +1,9 @@
 import { Skeleton } from "../../../components/Skeleton/Skeleton"
-import './FeaturedSkeleton.css'
+import './ProjectsSkeleton.css'
 
-export const FeaturedSkeleton = () => {
+export const ProjectsSkeleton = () => {
   return (
-    <div className="featured-skeleton-wrapper">
+    <div className="projects-skeleton-wrapper">
       <Skeleton type="paragraph" />
       <Skeleton type="paragraph" />
       <Skeleton type="paragraph" />

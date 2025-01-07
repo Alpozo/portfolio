@@ -1,21 +1,21 @@
-import './Featured.css';
+import './Projects.css';
 import React, { useEffect, useState } from "react";
 
 // Components
 import { Cell } from '../../../components/Cell/Cell';
-import { Article } from '../../../screens/Article/Article'
-import { FeaturedSkeleton } from './FeaturedSkeleton';
+import { Article } from '../../Article/Article'
+import { ProjectsSkeleton } from './ProjectsSkeleton';
 
 import { fetchArticles } from '../../../api/fetchArticles';
 import { addQueryParam, removeQueryParam } from '../../../utils/queryParams'
 import { isMobile } from '../../../utils/mediaquery'
 
-import RighthProblem from '../../../assets/featured/right-problem-cover.png'
-import Insights from '../../../assets/featured/insights.mp4'
-import Wondo from '../../../assets/featured/wondo.mp4'
-import Ontruck from '../../../assets/featured/illustration.gif'
+import RighthProblem from '../../../assets/projects/right-problem-cover.png'
+import Insights from '../../../assets/projects/insights.mp4'
+import Wondo from '../../../assets/projects/wondo.mp4'
+import Ontruck from '../../../assets/projects/illustration.gif'
 
-export const Featured = ({ onHoverItem, onLeaveImage }) => {
+export const Projects = ({ onHoverItem, onLeaveImage }) => {
   const params = new URLSearchParams(window.location.search);
   const postURL = params.get("post");
 
@@ -95,7 +95,7 @@ export const Featured = ({ onHoverItem, onLeaveImage }) => {
           </div>
         ))
           :
-          <FeaturedSkeleton />
+          <ProjectsSkeleton />
         }
       </div>
     </>

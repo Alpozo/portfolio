@@ -1,1 +1,1 @@
-export const TABS = [ "featured", "experience", "about", "connect" ];
+export const TABS = [ "projects", "experience", "about", "connect" ];
