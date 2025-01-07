@@ -4,7 +4,7 @@
 }
 
 .carousel-wrapper {
-    padding-top: 24px;
+    padding-top: 40px;
     padding-bottom: 24px;
 }
 
@@ -16,7 +16,6 @@
     .about-txt {
         padding: 40px 12px 128px;
         margin-top: 40px;
-
         max-width: 600px;
     }
 }
@@ -28,5 +27,5 @@
 .section-title {
     font-weight: bold;
     line-height: 45px;
-    margin-top: 20px;
+    margin-top: 32px;
 }
