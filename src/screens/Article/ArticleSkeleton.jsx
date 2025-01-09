@@ -4,7 +4,7 @@ import './ArticleSkeleton.css'
 export const ArticleSkeleton = () => {
   return (
     <div className="article-skeleton-wrapper">
-      <Skeleton type="paragraph" label="Loading information from Notion..." />
+      <Skeleton type="paragraph" />
       <Skeleton type="image" />
       <Skeleton type="line" />
     </div>

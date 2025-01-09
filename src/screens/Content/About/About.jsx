@@ -28,7 +28,7 @@ export const About = () => {
           <br />
           <p>I’ll never forget the first time I showed him a small mobile flow I’d designed. I thought it was awesome and super intuitive. His response? “Make a prototype and test it with five users.”</p>
           <br />
-          <p>So, I rolled up my sleeves, whipped up a prototype using Sketch and Adobe XD, and tested it with five people. To my surprise, parts of the flow didn’t make sense to them at all. Instead of being discouraged, I was hooked. When I told Carlos what I’d learned, he said, “Now fix what doesn’t work and test it again.” That was the moment I truly understood what it meant to iterate.</p>
+          <p>So, I rolled up my sleeves, whipped up a prototype using Sketch and Adobe XD, and tested it with five people. To my surprise, parts of the flow didn’t make sense to them at all. Instead of being discouraged, I was hooked. When I told Carlos what I’d learned, he said, “Now fix what doesn’t work and test it again.”</p>
           <br />
           <p>That day, I decided I wanted to be a Digital Product Designer.</p>
         </div>

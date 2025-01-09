@@ -6,6 +6,7 @@
     background-color: rgba(0, 0, 0, 0.4);
     display: flex;
     align-items: flex-end;
+    animation: fadeInModal 0.8s ease forwards;
 
 }
 
@@ -18,8 +19,29 @@
     height: 90vh;
     z-index: 100000000;
     border-radius: 24px 24px 0px 0px;
+    opacity: 0;
     visibility: visible;
     padding: 0px 128px 0px 128px;
+
+}
+
+@keyframes fadeInModal {
+    0% {
+        opacity: 0;
+        transform: translateY(500px);
+        background-color: rgba(0, 0, 0, 0);
+
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
 }
 
 .modal-close-btn {
