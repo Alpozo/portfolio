@@ -5,7 +5,7 @@ export const Callout = ({ textGroup, icon }) => {
 
     return (
         !!readingTime ? <div className='article-summary-container'>
-            <p className='article-summary-title'>
+            <p className='font-small-regular article-summary-title'>
                 <span>{textGroup[ 0 ]?.text?.content}</span>
                 {readingTime && (
                     <>
@@ -14,7 +14,7 @@ export const Callout = ({ textGroup, icon }) => {
                     </>
                 )}
             </p>
-            <p className='article-summary-description'>{textGroup[ 1 ]?.text?.content}</p>
+            <p className='font-body-regular article-summary-description'>{textGroup[ 1 ]?.text?.content}</p>
         </div> :
             <div className='callout-container'>
                 <p>{textGroup[ 0 ]?.text?.content}</p>

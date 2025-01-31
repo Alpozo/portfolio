@@ -23,13 +23,13 @@
 .article-summary-title {
     display: flex;
     gap: 8px;
-    font-size: 16px;
-    line-height: 16px;
+    /* font-size: 16px;
+    line-height: 16px; */
     color: var(--secondary-txt-color);
     margin-bottom: 12px;
 }
 
 .article-summary-description {
-    font-size: 16px;
-    line-height: 32px;
+    /* font-size: 16px;
+    line-height: 32px; */
 }

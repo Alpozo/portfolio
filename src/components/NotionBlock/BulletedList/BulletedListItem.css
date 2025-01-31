@@ -1,7 +1,7 @@
 .bulleted-list-item {
-    font-size: 16px;
-    line-height: 32px;
-    margin-bottom: 8px;
+    /* font-size: 16px;
+    line-height: 32px; */
+    margin-bottom: 4px;
     list-style-position: outside;
 
 }

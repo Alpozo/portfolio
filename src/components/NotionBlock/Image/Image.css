@@ -15,15 +15,15 @@
 
 .image-caption {
     color: var(--secondary-txt-color);
-    font-size: 14px;
-    line-height: 14px;
+    /* font-size: 14px;
+    line-height: 14px; */
 
 }
 
 .link-caption {
     color: var(--secondary-txt-color);
-    font-size: 14px;
-    line-height: 14px;
+    /* font-size: 14px;
+    line-height: 14px; */
     display: inline;
     text-decoration: underline;
 

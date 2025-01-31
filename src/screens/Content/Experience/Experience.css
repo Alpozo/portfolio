@@ -14,7 +14,8 @@
 
 .cronoCell>p {
     font-size: 18px;
+    line-height: 32px;
     color: var(--secondary-txt-color);
-    padding: 18px 12px 0px 12px;
+    padding: 12px 12px 0px 12px;
     width: 80px;
 }
