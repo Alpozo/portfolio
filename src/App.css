@@ -167,7 +167,6 @@ p {
   -ms-overflow-style: none;
   /* IE and Edge */
   scroll-behavior: smooth;
-  border: 1px red solid;
 }
 
 
