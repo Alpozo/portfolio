@@ -235,7 +235,24 @@ p {
   height: 100%;
   overflow: scroll;
   padding: 0px;
+
+  /* Firefox */
+  scrollbar-width: none;
+
+  /* IE y Edge */
+  -ms-overflow-style: none;
+
 }
+
+/* Chrome, Safari y Opera */
+.content-wrapper::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  display: none;
+}
+
+
+
 
 
 .fade-in-move-up {
