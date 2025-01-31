@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.7fed7754.css",
-    "main.js": "/portfolio/static/js/main.f9c08fa3.js",
+    "main.css": "/portfolio/static/css/main.688bbc26.css",
+    "main.js": "/portfolio/static/js/main.bfcdc922.js",
     "static/js/488.9c92ff38.chunk.js": "/portfolio/static/js/488.9c92ff38.chunk.js",
+    "static/media/whim-cover.mp4": "/portfolio/static/media/whim-cover.8c09ecbdc27470ac3680.mp4",
     "static/media/profile-picture.jpg": "/portfolio/static/media/profile-picture.ffc77540fc7b3a0a5dd3.jpg",
-    "static/media/wondo.mp4": "/portfolio/static/media/wondo.4053faf9603e798fbba8.mp4",
     "static/media/cave.png": "/portfolio/static/media/cave.4e2ac695ae026c046d70.png",
     "static/media/afternoon.png": "/portfolio/static/media/afternoon.cd545c16e69b223eb311.png",
+    "static/media/wondo-cover.mp4": "/portfolio/static/media/wondo-cover.c7d539bc20de83172688.mp4",
     "static/media/portrait.png": "/portfolio/static/media/portrait.84a93bd147124e779b17.png",
+    "static/media/doctor24-cover.mp4": "/portfolio/static/media/doctor24-cover.b494c57520cc58460196.mp4",
     "static/media/insights.mp4": "/portfolio/static/media/insights.7108603fb48d729d8df2.mp4",
     "static/media/skyline.png": "/portfolio/static/media/skyline.0e6c8de8132c6d99ef13.png",
     "static/media/image-background.jpg": "/portfolio/static/media/image-background.34fb81e55db31948bcac.jpg",
@@ -15,12 +17,12 @@
     "static/media/right-problem-cover.jpeg": "/portfolio/static/media/right-problem-cover.28736ea5cf3d0639f57c.jpeg",
     "index.html": "/portfolio/index.html",
     "static/media/close.svg": "/portfolio/static/media/close.e1d03a45af147ebe16d14c4cb79d4d8f.svg",
-    "main.7fed7754.css.map": "/portfolio/static/css/main.7fed7754.css.map",
-    "main.f9c08fa3.js.map": "/portfolio/static/js/main.f9c08fa3.js.map",
+    "main.688bbc26.css.map": "/portfolio/static/css/main.688bbc26.css.map",
+    "main.bfcdc922.js.map": "/portfolio/static/js/main.bfcdc922.js.map",
     "488.9c92ff38.chunk.js.map": "/portfolio/static/js/488.9c92ff38.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7fed7754.css",
-    "static/js/main.f9c08fa3.js"
+    "static/css/main.688bbc26.css",
+    "static/js/main.bfcdc922.js"
   ]
 }
