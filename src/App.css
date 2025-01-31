@@ -158,21 +158,24 @@ p {
   height: 100%;
   padding: 40px 128px;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
+  /* Asegura que haya desplazamiento sin mostrar la barra */
   display: flex;
   flex-direction: column;
   gap: 16px;
-  scrollbar-width: none;
+
   /* Firefox */
+  scrollbar-width: none;
+
+  /* IE y Edge */
   -ms-overflow-style: none;
-  /* IE and Edge */
-  scroll-behavior: smooth;
 }
 
-
+/* Chrome, Safari y Opera */
 .list-wrapper::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
   display: none;
-  /* Oculta el scrollbar en navegadores basados en WebKit */
 }
 
 .background-wrapper {
