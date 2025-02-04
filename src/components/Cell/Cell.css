@@ -1,14 +1,28 @@
 .cell-wrapper {
     border-radius: 8px;
-    padding: 12px;
+    padding: 20px;
     width: 100%;
+
+    @media (max-width:980px) {
+        border-radius: 0px;
+    }
 }
 
 .interactive-cell {
     transition: background-color 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.2);
+
+
+    /* Color de fondo inicial con transparencia */
+    /* Un leve desenfoque desde el inicio para suavizar el efecto */
 
     &:hover {
         cursor: pointer;
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: rgba(255, 255, 255, 0.6);
+        box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.05);
+
+        /* Hace que se vuelva más claro al pasar el mouse */
+        /* Aumenta el desenfoque en el hover */
     }
+
 }

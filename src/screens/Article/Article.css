@@ -8,12 +8,14 @@
     display: flex;
     flex-direction: column;
     gap: 0;
-    padding: 40px 128px 128px 128px;
+    padding: 60px 128px 128px 128px;
+    z-index: 9999999;
 }
 
 .subtitle {
     color: var(--secondary-txt-color);
     font-weight: 18px;
+    font-size: 18px;
     line-height: 32px;
     margin-bottom: 40px;
 }
@@ -42,8 +44,7 @@ ol {
 
 @media (max-width:980px) {
     .article-wrapper {
-        padding: 24px;
-        padding-top: 24px;
+        padding: 40px 24px;
         position: relative;
         width: 100%;
     }

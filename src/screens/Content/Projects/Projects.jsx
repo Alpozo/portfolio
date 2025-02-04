@@ -10,19 +10,15 @@ import { fetchArticles } from '../../../api/fetchArticles';
 import { addQueryParam, removeQueryParam } from '../../../utils/queryParams'
 import { isMobile } from '../../../utils/mediaquery'
 
-import RighthProblem from '../../../assets/projects/right-problem-cover.jpeg'
+
 import Insights from '../../../assets/projects/insights.mp4'
 import Wondo from '../../../assets/projects/wondo-cover.mp4'
-import Ontruck from '../../../assets/projects/illustration.gif'
+
 import Whim from '../../../assets/projects/whim-cover.mp4'
 import Doctor24 from '../../../assets/projects/doctor24-cover.mp4'
 
-export const Projects = ({ onHoverItem, onLeaveImage }) => {
-  const params = new URLSearchParams(window.location.search);
-  const postURL = params.get("post");
+export const Projects = ({ onHoverItem, onLeaveImage, handleIsModalOpen, setArticle }) => {
 
-  const [ isModalOpen, setIsModalOpen ] = useState(!!postURL)
-  const [ article, setArticle ] = useState('')
   const [ articles, setArticles ] = useState([]);
   const [ hoveredIndex, setHoveredIndex ] = useState(null);
 
@@ -35,16 +31,16 @@ export const Projects = ({ onHoverItem, onLeaveImage }) => {
   }, []);
 
   const ASSETS = {
-    "dc47a7af-7524-4fd6-8b07-3c1b2ccff2c5": { image: RighthProblem },
-    "dce5de0d-d4dc-4b46-95d8-f685b2e9f852": { video: Insights },
-    "30f01715-c8b9-4480-b2d7-279a10da3af7": { video: Wondo },
-    "c1445b97-84aa-47ab-a256-63a7de787dc5": { image: Ontruck },
+    // "dc47a7af-7524-4fd6-8b07-3c1b2ccff2c5": { image: RighthProblem },
+    // "dce5de0d-d4dc-4b46-95d8-f685b2e9f852": { video: Insights },
+    // "30f01715-c8b9-4480-b2d7-279a10da3af7": { video: Wondo },
+    // "c1445b97-84aa-47ab-a256-63a7de787dc5": { image: Ontruck },
 
     // news
     "189aa0de-144d-80d3-832e-da1876c62d50": { video: Wondo },
     "189aa0de-144d-80c2-886e-f4e799c7fbc9": { video: Insights },
     "18aaa0de-144d-80ba-a1ac-ddbcc0967237": { video: Whim },
-    "18aaa0de-144d-8083-87b5-d38a37abe62c": { image: Ontruck },
+    // "18aaa0de-144d-8083-87b5-d38a37abe62c": { image: Ontruck },
     "18aaa0de-144d-809b-aa59-da968c100c14": { video: Doctor24 },
   }
 
@@ -70,11 +66,11 @@ export const Projects = ({ onHoverItem, onLeaveImage }) => {
 
   const openModal = (currentArticle) => {
     setArticle(currentArticle)
-    setIsModalOpen(true)
+    handleIsModalOpen(true)
   }
 
   const handleCloseModal = () => {
-    setIsModalOpen(false)
+    handleIsModalOpen(false)
     setArticle(undefined)
     removeQueryParam("post")
   }
@@ -88,11 +84,6 @@ export const Projects = ({ onHoverItem, onLeaveImage }) => {
 
   return (
     <>
-      <Article article={article}
-        isModalOpen={isModalOpen}
-        onCloseModal={handleCloseModal}
-      />
-
       <div className="list-wrapper">
         {sortedArticles.length ? sortedArticles.map((item, index) => (
           <div key={index} onMouseEnter={

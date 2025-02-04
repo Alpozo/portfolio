@@ -1,8 +1,39 @@
 .background-image {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 110%;
+  height: 110%;
   object-fit: cover;
   object-position: top;
   filter: grayscale(0%) opacity(0.6);
+}
+
+#background-video {
+  position: fixed;
+  top: -20px;
+  left: -20px;
+  width: 110vw;
+  height: 110vh;
+  object-fit: cover;
+  z-index: -999999;
+  pointer-events: none;
+  user-select: none;
+  filter: hue-rotate(280deg) blur(0px)contrast(140%);
+  opacity: 0.7;
+  animation: hueRotateLoop 20s infinite;
+  /* Ajusta el tiempo según lo desees */
+
+}
+
+@keyframes hueRotateLoop {
+  0% {
+    filter: hue-rotate(280deg) blur(0px) contrast(140%);
+  }
+
+  50% {
+    filter: hue-rotate(240deg) blur(0px) contrast(140%);
+  }
+
+  100% {
+    filter: hue-rotate(280deg) blur(0px) contrast(140%);
+  }
 }

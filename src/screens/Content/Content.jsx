@@ -4,9 +4,9 @@ import { About } from './About/About';
 import { Connect } from './Connect/Connect';
 import { Projects } from './Projects/Projects';
 
-export const Content = ({ activeTab, isAnimating, onHoverItem, onLeaveImage }) => {
+export const Content = ({ activeTab, isAnimating, onHoverItem, onLeaveImage, handleIsModalOpen, setArticle }) => {
   const TABS = {
-    0: <Projects onHoverItem={onHoverItem} onLeaveImage={onLeaveImage} />,
+    0: <Projects onHoverItem={onHoverItem} onLeaveImage={onLeaveImage} handleIsModalOpen={handleIsModalOpen} setArticle={setArticle} />,
     1: <Experience />,
     2: <About />,
     3: <Connect />

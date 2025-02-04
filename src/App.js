@@ -3,6 +3,7 @@ import './screens/Articles/articles.css';
 import { useState } from 'react';
 import { Header } from './components/Header/Header';
 import { Content } from './screens/Content/Content';
+import { Article } from './screens/Article/Article';
 import { Tabs } from './components/Tabs/Tabs';
 import { Carousel } from './components/Carousel/Carousel';
 import { ImageBackground } from './screens/VideoBackground/VideoBackground';
@@ -12,9 +13,13 @@ import { addQueryParam } from './utils/queryParams'
 export const App = () => {
   const params = new URLSearchParams(window.location.search);
   const tabURL = params.get("view");
+  const postURL = params.get("post");
+
   const [ activeTab, setActiveTab ] = useState(Math.max(TABS.findIndex((tab) => tab === tabURL), 0));
   const [ isAnimating, setIsAnimating ] = useState(false);
   const [ hoveredItem, setHoveredItem ] = useState(null);
+  const [ isModalOpen, setIsModalOpen ] = useState(!!postURL)
+  const [ article, setArticle ] = useState('')
 
   const handleHover = (item) => {
     setHoveredItem(item);
@@ -75,16 +80,20 @@ export const App = () => {
       <div className="body-wrapper">
         <div className="main-wrapper">
           <Header />
-          <Tabs activeTab={activeTab} onTabChange={(currentTab) => onTabChange(currentTab)} />
-          <Content
-            activeTab={activeTab}
-            isAnimating={isAnimating}
-            onHoverItem={handleHover}
-            onLeaveImage={handleLeave}
-          />
+          <>
+            <Tabs activeTab={activeTab} onTabChange={(currentTab) => onTabChange(currentTab)} />
+            <Content
+              activeTab={activeTab}
+              isAnimating={isAnimating}
+              onHoverItem={handleHover}
+              onLeaveImage={handleLeave}
+              handleIsModalOpen={(isOpen) => setIsModalOpen(isOpen)}
+              setArticle={setArticle}
+            />
+          </>
         </div>
         <div className="background-wrapper">
-          {/* <ImageBackground /> */}
+          <ImageBackground />
           {hoveredItem && (
             <div className="hovered-image-wrapper">
               {hoveredItem?.localFile ? <LocalFile /> : <NotionFile />}
@@ -93,6 +102,10 @@ export const App = () => {
           {activeTab === 2 && <Carousel />}
         </div>
       </div>
+      <Article article={article}
+        isModalOpen={isModalOpen}
+        onCloseModal={() => setIsModalOpen(false)}
+      />
     </>
   );
 };

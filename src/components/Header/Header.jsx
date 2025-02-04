@@ -10,7 +10,7 @@ export const Header = () => {
           <p className="text-header">
             Alejandro del Pozo
           </p>
-          <p className="text-body-regular">
+          <p className="font-small-regular">
             Digital Product Designer
           </p>
         </div>
