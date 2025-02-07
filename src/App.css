@@ -31,8 +31,10 @@ body {
   color: var(--primary-txt-color);
   font-family: "Source Sans 3", Arial, sans-serif;
   flex: 1;
-  animation: gradient 15s ease infinite;
   height: 100vh;
+  background-color: #fff;
+  background-image: url("https://www.transparenttextures.com/patterns/dark-stripes-light.png");
+
 }
 
 /* Chrome, Safari y Opera (basados en WebKit) */
@@ -52,22 +54,6 @@ html {
   -ms-overflow-style: none;
   /* Oculta la scrollbar en IE/Edge */
 }
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-
 
 a {
   text-decoration: none;
@@ -112,7 +98,6 @@ p {
 .body-wrapper {
   width: 100%;
   height: 100dvh;
-  overflow: hidden;
   justify-content: center;
   /* Centra horizontalmente */
   align-items: center;
@@ -137,9 +122,8 @@ p {
   padding: 40px 80px 0px 80px;
   flex-direction: column;
   gap: 0px;
-  background-color: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(48px);
-  overflow: hidden;
+  background-color: rgba(255, 255, 255, 1);
+  backdrop-filter: blur(0px);
 
   @media (max-width:575px) {
     /* padding-top: 48px; */
