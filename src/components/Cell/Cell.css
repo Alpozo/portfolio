@@ -9,20 +9,14 @@
 }
 
 .interactive-cell {
-    transition: background-color 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 0.6s ease;
 
-
-    /* Color de fondo inicial con transparencia */
-    /* Un leve desenfoque desde el inicio para suavizar el efecto */
 
     &:hover {
         cursor: pointer;
-        background-color: rgba(255, 255, 255, 0.6);
-        box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.05);
+        background-color: #F2F2F2;
+        /* box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.2); */
 
-        /* Hace que se vuelva más claro al pasar el mouse */
-        /* Aumenta el desenfoque en el hover */
     }
 
 }
