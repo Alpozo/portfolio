@@ -1,6 +1,6 @@
 import './App.css';
 import './screens/Articles/articles.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Header } from './components/Header/Header';
 import { Content } from './screens/Content/Content';
 import { Article } from './screens/Article/Article';
@@ -8,9 +8,8 @@ import { Tabs } from './components/Tabs/Tabs';
 import { Carousel } from './components/Carousel/Carousel';
 import { ImageBackground } from './screens/VideoBackground/VideoBackground';
 import { TABS } from './components/Tabs/constants';
-import { addQueryParam } from './utils/queryParams'
-
-import { CookieBanner } from './components/CookieBanner/CookieBanner';
+import { addQueryParam, removeQueryParam } from './utils/queryParams';
+import ReactGA from 'react-ga';
 
 
 export const App = () => {
@@ -23,6 +22,23 @@ export const App = () => {
   const [ hoveredItem, setHoveredItem ] = useState(null);
   const [ isModalOpen, setIsModalOpen ] = useState(!!postURL)
   const [ article, setArticle ] = useState('')
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false)
+    setArticle(undefined)
+    removeQueryParam("post")
+  }
+
+
+  const GA_TRACKING_ID = process.env.REACT_APP_GOOGLE_ANALYTICS_ID;
+
+
+  useEffect(() => {
+    ReactGA.initialize(GA_TRACKING_ID);
+    ReactGA.pageview(window.location.pathname + window.location.search);
+    // eslint-disable-next-line react-hooks/exhaustive-deps 
+  }, []);
+
 
   const handleHover = (item) => {
     setHoveredItem(item);
@@ -103,10 +119,8 @@ export const App = () => {
           {activeTab === 2 && <Carousel />}
         </div>
       </div>
-      <Article article={article} isModalOpen={isModalOpen} onCloseModal={() => setIsModalOpen(false)} />
+      <Article article={article} isModalOpen={isModalOpen} onCloseModal={handleCloseModal} />
 
-      {/* Banner de cookies */}
-      <CookieBanner />
     </>
   );
 };

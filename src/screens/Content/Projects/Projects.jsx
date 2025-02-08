@@ -3,11 +3,10 @@ import React, { useEffect, useState } from "react";
 
 // Components
 import { Cell } from '../../../components/Cell/Cell';
-import { Article } from '../../Article/Article'
 import { ProjectsSkeleton } from './ProjectsSkeleton';
 
 import { fetchArticles } from '../../../api/fetchArticles';
-import { addQueryParam, removeQueryParam } from '../../../utils/queryParams'
+import { addQueryParam } from '../../../utils/queryParams'
 import { isMobile } from '../../../utils/mediaquery'
 
 
@@ -69,11 +68,6 @@ export const Projects = ({ onHoverItem, onLeaveImage, handleIsModalOpen, setArti
     handleIsModalOpen(true)
   }
 
-  const handleCloseModal = () => {
-    handleIsModalOpen(false)
-    setArticle(undefined)
-    removeQueryParam("post")
-  }
 
   const onClickArticle = (article) => {
     openModal(article)

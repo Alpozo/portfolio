@@ -27,7 +27,7 @@ export const Article = ({ article, isModalOpen, onCloseModal }) => {
         }).finally(() => {
             setIsLoading(false);
         });;
-    }, [ article?.id ]);
+    }, [ article?.id, postURL ]);
 
     if (!blocks) return
 
