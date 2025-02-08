@@ -10,6 +10,9 @@ import { ImageBackground } from './screens/VideoBackground/VideoBackground';
 import { TABS } from './components/Tabs/constants';
 import { addQueryParam } from './utils/queryParams'
 
+import { CookieBanner } from './components/CookieBanner/CookieBanner';
+
+
 export const App = () => {
   const params = new URLSearchParams(window.location.search);
   const tabURL = params.get("view");
@@ -80,17 +83,15 @@ export const App = () => {
       <div className="body-wrapper">
         <div className="main-wrapper">
           <Header />
-          <>
-            <Tabs activeTab={activeTab} onTabChange={(currentTab) => onTabChange(currentTab)} />
-            <Content
-              activeTab={activeTab}
-              isAnimating={isAnimating}
-              onHoverItem={handleHover}
-              onLeaveImage={handleLeave}
-              handleIsModalOpen={(isOpen) => setIsModalOpen(isOpen)}
-              setArticle={setArticle}
-            />
-          </>
+          <Tabs activeTab={activeTab} onTabChange={onTabChange} />
+          <Content
+            activeTab={activeTab}
+            isAnimating={isAnimating}
+            onHoverItem={handleHover}
+            onLeaveImage={handleLeave}
+            handleIsModalOpen={setIsModalOpen}
+            setArticle={setArticle}
+          />
         </div>
         <div className="background-wrapper">
           <ImageBackground />
@@ -102,10 +103,10 @@ export const App = () => {
           {activeTab === 2 && <Carousel />}
         </div>
       </div>
-      <Article article={article}
-        isModalOpen={isModalOpen}
-        onCloseModal={() => setIsModalOpen(false)}
-      />
+      <Article article={article} isModalOpen={isModalOpen} onCloseModal={() => setIsModalOpen(false)} />
+
+      {/* Banner de cookies */}
+      <CookieBanner />
     </>
   );
 };
