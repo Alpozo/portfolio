@@ -1,6 +1,6 @@
 import './App.css';
 import './screens/Articles/articles.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Header } from './components/Header/Header';
 import { Content } from './screens/Content/Content';
 import { Article } from './screens/Article/Article';
@@ -20,16 +20,6 @@ export const App = () => {
   const [ hoveredItem, setHoveredItem ] = useState(null);
   const [ isModalOpen, setIsModalOpen ] = useState(!!postURL)
   const [ article, setArticle ] = useState('')
-
-  const GA_TRACKING_ID = process.env.REACT_APP_GOOGLE_ANALYTICS_ID;
-
-
-  useEffect(() => {
-    ReactGA.initialize(GA_TRACKING_ID);
-    ReactGA.pageview(window.location.pathname + window.location.search);
-    // eslint-disable-next-line react-hooks/exhaustive-deps 
-  }, []);
-
 
   const handleHover = (item) => {
     setHoveredItem(item);
