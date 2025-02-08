@@ -1,6 +1,5 @@
 import './VideoBackground.css';
 
-
 export const ImageBackground = () => {
     return (
         <>
@@ -8,8 +7,6 @@ export const ImageBackground = () => {
                 <source src={Image} type="video/mp4" />
             </video> */}
         </>
-
-
     );
 }
 

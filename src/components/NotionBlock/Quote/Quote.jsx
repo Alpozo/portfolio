@@ -1,6 +1,5 @@
 import './Quote.css';
 
-
 export const Quote = ({ textGroup }) => {
     return (
         <div className='quote-wrapper'>
