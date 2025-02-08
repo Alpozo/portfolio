@@ -8,16 +8,13 @@ import { Tabs } from './components/Tabs/Tabs';
 import { Carousel } from './components/Carousel/Carousel';
 import { ImageBackground } from './screens/VideoBackground/VideoBackground';
 import { TABS } from './components/Tabs/constants';
-import { addQueryParam } from './utils/queryParams'
-
+import { addQueryParam, removeQueryParam } from './utils/queryParams'
 import { CookieBanner } from './components/CookieBanner/CookieBanner';
-
 
 export const App = () => {
   const params = new URLSearchParams(window.location.search);
   const tabURL = params.get("view");
   const postURL = params.get("post");
-
   const [ activeTab, setActiveTab ] = useState(Math.max(TABS.findIndex((tab) => tab === tabURL), 0));
   const [ isAnimating, setIsAnimating ] = useState(false);
   const [ hoveredItem, setHoveredItem ] = useState(null);
@@ -27,7 +24,6 @@ export const App = () => {
   const handleHover = (item) => {
     setHoveredItem(item);
   };
-
   const handleLeave = () => {
     setHoveredItem(null);
   };
@@ -43,6 +39,12 @@ export const App = () => {
     setActiveTab(currentTab)
     addQueryParam("view", TABS[ currentTab ])
     animate()
+  }
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false)
+    setArticle(undefined)
+    removeQueryParam("post")
   }
 
   const NotionFile = () => {
@@ -67,16 +69,12 @@ export const App = () => {
       <img src={hoveredItem?.localFile?.image} alt='' />
   }
 
-
   document.body.addEventListener("pointermove", (e) => {
     const { currentTarget: el, clientX: x, clientY: y } = e;
     const { top: t, left: l, width: w, height: h } = el.getBoundingClientRect();
     el.style.setProperty('--posX', x - l - w / 2);
     el.style.setProperty('--posY', y - t - h / 2);
   })
-
-
-
 
   return (
     <>
@@ -103,9 +101,7 @@ export const App = () => {
           {activeTab === 2 && <Carousel />}
         </div>
       </div>
-      <Article article={article} isModalOpen={isModalOpen} onCloseModal={() => setIsModalOpen(false)} />
-
-      {/* Banner de cookies */}
+      <Article article={article} isModalOpen={isModalOpen} onCloseModal={handleCloseModal} />
       <CookieBanner />
     </>
   );

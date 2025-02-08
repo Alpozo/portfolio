@@ -59,12 +59,15 @@
   border-radius: 100px;
   margin: 0;
   border: none;
-  background-color: rgba(0, 0, 0, 0.6);
-  opacity: 0.5;
+  background-color: var(--interactive-bg-color);
   cursor: pointer;
   transition: opacity 0.3s;
+
+  &:hover {
+    background-color: var(--interactive-hover-bg-color);
+  }
 }
 
 .dot.active {
-  opacity: 1;
+  background-color: var(--interactive-active-bg-color);
 }

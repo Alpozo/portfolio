@@ -1,13 +1,11 @@
 import './Projects.css';
 import React, { useEffect, useState } from "react";
 
-// Components
 import { Cell } from '../../../components/Cell/Cell';
-import { Article } from '../../Article/Article'
 import { ProjectsSkeleton } from './ProjectsSkeleton';
 
 import { fetchArticles } from '../../../api/fetchArticles';
-import { addQueryParam, removeQueryParam } from '../../../utils/queryParams'
+import { addQueryParam } from '../../../utils/queryParams'
 import { isMobile } from '../../../utils/mediaquery'
 
 
@@ -31,16 +29,10 @@ export const Projects = ({ onHoverItem, onLeaveImage, handleIsModalOpen, setArti
   }, []);
 
   const ASSETS = {
-    // "dc47a7af-7524-4fd6-8b07-3c1b2ccff2c5": { image: RighthProblem },
-    // "dce5de0d-d4dc-4b46-95d8-f685b2e9f852": { video: Insights },
-    // "30f01715-c8b9-4480-b2d7-279a10da3af7": { video: Wondo },
-    // "c1445b97-84aa-47ab-a256-63a7de787dc5": { image: Ontruck },
 
-    // news
     "189aa0de-144d-80d3-832e-da1876c62d50": { video: Wondo },
     "189aa0de-144d-80c2-886e-f4e799c7fbc9": { video: Insights },
     "18aaa0de-144d-80ba-a1ac-ddbcc0967237": { video: Whim },
-    // "18aaa0de-144d-8083-87b5-d38a37abe62c": { image: Ontruck },
     "18aaa0de-144d-809b-aa59-da968c100c14": { video: Doctor24 },
   }
 
@@ -67,12 +59,6 @@ export const Projects = ({ onHoverItem, onLeaveImage, handleIsModalOpen, setArti
   const openModal = (currentArticle) => {
     setArticle(currentArticle)
     handleIsModalOpen(true)
-  }
-
-  const handleCloseModal = () => {
-    handleIsModalOpen(false)
-    setArticle(undefined)
-    removeQueryParam("post")
   }
 
   const onClickArticle = (article) => {

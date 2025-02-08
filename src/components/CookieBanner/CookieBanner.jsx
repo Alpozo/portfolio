@@ -1,4 +1,3 @@
-// components/CookieBanner/CookieBanner.jsx
 import React, { useState, useEffect } from 'react';
 import './CookieBanner.css';
 
@@ -7,7 +6,7 @@ export const CookieBanner = () => {
 
   function getCookie(name) {
     let matches = document.cookie.match(new RegExp(
-      "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+      "(?:^|; )" + name.replace(/([.$?*|{}()[]\\\/\+^])/g, '\\$1') + "=([^;]*)"
     ));
     return matches ? decodeURIComponent(matches[ 1 ]) : undefined;
   }
@@ -42,9 +41,9 @@ export const CookieBanner = () => {
 
   return (
     <div className="cookie-banner">
-      <p>Cookies help me improve this portfolio. Give them a thumbs up?</p>
+      <p>Hey! I use cookies for analytics to help improve my portfolio. </p>
       <div>
-        <button className="accept-button" onClick={handleAccept}>Accept 👍</button>
+        <button className="accept-button" onClick={handleAccept}>Accept</button>
         <button className="reject-button" onClick={handleReject}>Decline</button>
       </div>
     </div >

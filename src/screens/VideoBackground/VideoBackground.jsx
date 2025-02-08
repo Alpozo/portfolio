@@ -1,5 +1,4 @@
 import './VideoBackground.css';
-import Image from "../../assets/main-background.mp4";
 
 
 export const ImageBackground = () => {

@@ -3,15 +3,25 @@
 
 
 :root {
-  --primary-bg-color: #1E1E1E;
-  --secondary-bg-color: rgba(0, 0, 0, 0.2);
-  /* #000 con 50% */
-  --tertiary-bg-color: rgba(255, 255, 255, 0.9);
-  /* #FFF con 10% */
   --primary-txt-color: rgba(0, 0, 0, 0.8);
+  --primary-inverted-txt-color: rgba(255, 255, 255, 1);
   --secondary-txt-color: rgba(0, 0, 0, 0.5);
-  /* #FFF con 50% */
-  --quary-mobile-jump: 1080px;
+  --primary-bg-color: rgba(255, 255, 255, 0.9);
+
+  --interactive-bg-color: rgba(0, 0, 0, 0.9);
+  --interactive-hover-bg-color: rgba(0, 0, 0, 0.05);
+  --interactive-active-bg-color: rgba(0, 0, 0, 0.2);
+
+  --primary-action-color: rgba(0, 0, 0, 0.8);
+  --secondary-action-color: rgba(0, 0, 0, 0.05);
+
+  --hover-opacity: 0.7;
+  --overlay-bg-color: rgba(255, 255, 255, 0.1);
+
+  --dropshadow-layer-1: 0px 0px 24px rgba(0, 0, 0, 0.1);
+  --dropshadow-layer-2: 0px 0px 64px rgba(0, 0, 0, 0.1);
+
+  --body-background-image: url("https://www.transparenttextures.com/patterns/dark-stripes-light.png");
 }
 
 .font-body-regular {
@@ -32,9 +42,8 @@ body {
   font-family: "Source Sans 3", Arial, sans-serif;
   flex: 1;
   height: 100vh;
-  background-color: #fff;
-  background-image: url("https://www.transparenttextures.com/patterns/dark-stripes-light.png");
-
+  background-color: var(--primary-bg-color);
+  background-image: var(--body-background-image);
 }
 
 /* Chrome, Safari y Opera (basados en WebKit) */
@@ -79,7 +88,7 @@ p {
 
 /* Typography */
 .text-header {
-  font-weight: bold;
+  font-weight: 600;
   font-size: 24px;
   line-height: 40px;
 }
@@ -122,7 +131,7 @@ p {
   padding: 40px 80px 0px 80px;
   flex-direction: column;
   gap: 0px;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: var(--primary-bg-color);
   backdrop-filter: blur(0px);
 
   @media (max-width:575px) {
@@ -192,7 +201,7 @@ p {
     max-height: 100%;
     border-radius: 24px;
     object-fit: cover;
-    box-shadow: 0 0px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--dropshadow-layer-1);
   }
 }
 
@@ -246,8 +255,9 @@ p {
 }
 
 .toast {
-  background-color: rgba(255, 255, 255, 0.8);
-  color: var(--primary-bg-color);
+  background-color: var(--primary-bg-color);
+  color: var(--primary-txt-color);
+  box-shadow: var(--dropshadow-layer-1);
   padding: 12px 24px;
   border-radius: 8px;
   z-index: 1000;
@@ -255,32 +265,24 @@ p {
   left: 80px;
   bottom: 64px;
   pointer-events: none;
-  /* Evita que interfiera con el clic del ratón */
   transform: translate(-50%, -50%);
-  /* Opcional: ajusta el centrado relativo a las coordenadas */
   animation: fadeInUp 0.3s ease forwards, fadeOutDown 0.3s ease 1.7s forwards;
 }
 
-/* MODAL */
-/* Fondo semitransparente */
+
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100dvh;
-  background-color: rgba(0, 0, 0, 0.5);
-  /* Fondo negro con opacidad */
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  /* Asegura que esté por encima de otros elementos */
   opacity: 0;
-  /* Animación de fade-in para el fondo */
 }
 
-/* Botón de cerrar */
 .modal-close-btn {
   position: absolute;
   top: 12px;
@@ -289,7 +291,7 @@ p {
   border: none;
   font-size: 20px;
   cursor: pointer;
-  color: black;
+  color: var(--primary-action-color);
 }
 
 /* Animaciones */

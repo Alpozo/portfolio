@@ -1,8 +1,8 @@
-.modal-cell-wrapper {
+/* .modal-cell-wrapper {
     border-radius: 8px;
     padding: 12px;
     width: 100%;
-    background-color: none;
+    background-color: red;
     transition: transform 0.8s ease, background-color 0.2s ease;
 
     a {
@@ -27,4 +27,4 @@
         background-color: var(--tertiary-bg-color);
     }
 
-}
+} */
