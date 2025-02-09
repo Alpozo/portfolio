@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.b6206d37.css",
-    "main.js": "/portfolio/static/js/main.3e62a62e.js",
+    "main.js": "/portfolio/static/js/main.d3370aeb.js",
     "static/js/488.9c92ff38.chunk.js": "/portfolio/static/js/488.9c92ff38.chunk.js",
     "static/media/whim-cover.mp4": "/portfolio/static/media/whim-cover.ec5070faf12837db1849.mp4",
     "static/media/wondo-cover.mp4": "/portfolio/static/media/wondo-cover.e6a809fb353890bf0eab.mp4",
@@ -9,16 +9,17 @@
     "static/media/insights.mp4": "/portfolio/static/media/insights.7108603fb48d729d8df2.mp4",
     "static/media/cave.png": "/portfolio/static/media/cave.5b286140b5bb7c1140ee.png",
     "static/media/afternoon.png": "/portfolio/static/media/afternoon.71fd8e98f7de921748c2.png",
+    "static/media/ontruck-cover.gif": "/portfolio/static/media/ontruck-cover.04c4fa87e2b2c457987f.gif",
     "static/media/portrait.png": "/portfolio/static/media/portrait.d069ff27ca19b305bdb3.png",
     "static/media/skyline.png": "/portfolio/static/media/skyline.e729a3fd0e224d60372c.png",
     "index.html": "/portfolio/index.html",
     "static/media/close.svg": "/portfolio/static/media/close.3159a6cbd3ad5c447c78795ba1e6d93a.svg",
     "main.b6206d37.css.map": "/portfolio/static/css/main.b6206d37.css.map",
-    "main.3e62a62e.js.map": "/portfolio/static/js/main.3e62a62e.js.map",
+    "main.d3370aeb.js.map": "/portfolio/static/js/main.d3370aeb.js.map",
     "488.9c92ff38.chunk.js.map": "/portfolio/static/js/488.9c92ff38.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b6206d37.css",
-    "static/js/main.3e62a62e.js"
+    "static/js/main.d3370aeb.js"
   ]
 }
