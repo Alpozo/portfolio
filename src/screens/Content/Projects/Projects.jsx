@@ -11,9 +11,9 @@ import { isMobile } from '../../../utils/mediaquery'
 
 import Insights from '../../../assets/projects/insights.mp4'
 import Wondo from '../../../assets/projects/wondo-cover.mp4'
-
 import Whim from '../../../assets/projects/whim-cover.mp4'
 import Doctor24 from '../../../assets/projects/doctor24-cover.mp4'
+import Ontruck from '../../../assets/projects/ontruck-cover.gif'
 
 export const Projects = ({ onHoverItem, onLeaveImage, handleIsModalOpen, setArticle }) => {
 
@@ -34,6 +34,7 @@ export const Projects = ({ onHoverItem, onLeaveImage, handleIsModalOpen, setArti
     "189aa0de-144d-80c2-886e-f4e799c7fbc9": { video: Insights },
     "18aaa0de-144d-80ba-a1ac-ddbcc0967237": { video: Whim },
     "18aaa0de-144d-809b-aa59-da968c100c14": { video: Doctor24 },
+    "195aa0de-144d-8076-89f4-c3ea3b05ff19": { image: Ontruck },
   }
 
   const articlesList = articles.map(({ id, properties }) => {
