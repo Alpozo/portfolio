@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.b6206d37.css",
-    "main.js": "/portfolio/static/js/main.d3370aeb.js",
+    "main.js": "/portfolio/static/js/main.baca7eca.js",
     "static/js/488.9c92ff38.chunk.js": "/portfolio/static/js/488.9c92ff38.chunk.js",
     "static/media/whim-cover.mp4": "/portfolio/static/media/whim-cover.ec5070faf12837db1849.mp4",
     "static/media/wondo-cover.mp4": "/portfolio/static/media/wondo-cover.e6a809fb353890bf0eab.mp4",
@@ -15,11 +15,11 @@
     "index.html": "/portfolio/index.html",
     "static/media/close.svg": "/portfolio/static/media/close.3159a6cbd3ad5c447c78795ba1e6d93a.svg",
     "main.b6206d37.css.map": "/portfolio/static/css/main.b6206d37.css.map",
-    "main.d3370aeb.js.map": "/portfolio/static/js/main.d3370aeb.js.map",
+    "main.baca7eca.js.map": "/portfolio/static/js/main.baca7eca.js.map",
     "488.9c92ff38.chunk.js.map": "/portfolio/static/js/488.9c92ff38.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b6206d37.css",
-    "static/js/main.d3370aeb.js"
+    "static/js/main.baca7eca.js"
   ]
 }
