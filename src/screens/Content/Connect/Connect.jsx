@@ -23,7 +23,7 @@ export const Connect = () => {
   const handleCalendlyPopup = () => {
     if (window.Calendly) {
       window.Calendly.initPopupWidget({
-        url: 'https://calendly.com/alejandrodelpozo91/1h-meeting',
+        url: 'https://calendly.com/alpozolozano/1h-meeting',
       });
     } else {
       console.error('Calendly is not available yet.');
@@ -31,7 +31,7 @@ export const Connect = () => {
   };
 
   const handleCopyEmail = () => {
-    const email = "alejandrodelpozo91@gmail.com";
+    const email = "alpozolozano@gmail.com";
     navigator.clipboard
       .writeText(email)
       .then(() => {
@@ -60,7 +60,7 @@ export const Connect = () => {
         onClick={handleCalendlyPopup}
       />
       <Cell
-        title="alejandrodelpozo91@gmail.com"
+        title="alpozolozano@gmail.com"
         subtitle="Send me an email"
         interactive={true}
         onClick={handleCopyEmail}
