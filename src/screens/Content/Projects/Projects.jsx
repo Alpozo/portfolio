@@ -45,16 +45,15 @@ export const Projects = ({ onHoverItem, onLeaveImage, handleIsModalOpen, setArti
       subtitle: properties?.Tags.rich_text[ 0 ]?.text?.content,
       file: properties?.Cover?.files[ 0 ]?.file?.url,
       fileType: properties?.Cover?.files[ 0 ]?.name?.split('.')?.[ 1 ],
-      date: properties?.Date?.date?.start,  // Extraemos la fecha aquí
+      date: properties?.Date?.date?.start,
       localFile: ASSETS[ id ],
     }
   });
 
-  // Ordenar por fecha (más reciente primero)
   const sortedArticles = [ ...articlesList ].sort((a, b) => {
     const dateA = new Date(a.date);
     const dateB = new Date(b.date);
-    return dateB - dateA;  // Orden descendente
+    return dateB - dateA;
   });
 
   const openModal = (currentArticle) => {

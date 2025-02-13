@@ -15,13 +15,13 @@ export const Image = ({ image, captionGroup }) => {
                         <a href={text.link.url}
                             target="_blank"
                             rel="noreferrer"
-                            className={`font-small-regular link-caption ${fontWeightStyles}`}
+                            className={`secondary-text link-caption ${fontWeightStyles}`}
                             key={id}
                         >
                             {text.content}
                         </a >
                         :
-                        <span className="font-small-regular image-caption">
+                        <span className="secondary-text image-caption">
                             {text?.content}
                         </span>
 

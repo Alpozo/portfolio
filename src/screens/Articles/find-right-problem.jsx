@@ -3,7 +3,7 @@ import React from 'react';
 // Asegúrate de usar un nombre de componente en mayúsculas
 export const RightProblem = () => {
   return (
-    <div className="article-wrapper font-body-regular">
+    <div className="article-wrapper primary-text">
       <div>
         <h2>Find the right problem to solve</h2>
         <h3>Email campaign, Copywriting</h3>

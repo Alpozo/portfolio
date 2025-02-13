@@ -11,9 +11,9 @@
 .skeleton {
   border-radius: 8px;
   background: linear-gradient(90deg,
-      var(--interactive-hover-bg-color) 25%,
-      rgba(20, 0, 0, 0) 50%,
-      var(--interactive-hover-bg-color) 75%);
+      rgba(0, 0, 0, 0.06) 25%,
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 0.06) 75%);
   background-size: 200% 100%;
   animation: loading 3s infinite ease-in-out;
   border-radius: 8px;

@@ -10,7 +10,12 @@
   flex-direction: column;
   gap: 0px;
   padding-left: 20px;
+}
 
+.text-header {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 40px;
 }
 
 @media (max-width:980px) {

@@ -79,17 +79,20 @@ export const App = () => {
   return (
     <>
       <div className="body-wrapper">
+        <p className='dev-by'>© 2025 • Self-designed & developed with advice of <a href='https://www.linkedin.com/in/junyiji/'>@junyi</a></p>
         <div className="main-wrapper">
-          <Header />
-          <Tabs activeTab={activeTab} onTabChange={onTabChange} />
-          <Content
-            activeTab={activeTab}
-            isAnimating={isAnimating}
-            onHoverItem={handleHover}
-            onLeaveImage={handleLeave}
-            handleIsModalOpen={setIsModalOpen}
-            setArticle={setArticle}
-          />
+          <div className='main-wrapper-content'>
+            <Header />
+            <Tabs activeTab={activeTab} onTabChange={onTabChange} />
+            <Content
+              activeTab={activeTab}
+              isAnimating={isAnimating}
+              onHoverItem={handleHover}
+              onLeaveImage={handleLeave}
+              handleIsModalOpen={setIsModalOpen}
+              setArticle={setArticle}
+            />
+          </div>
         </div>
         <div className="background-wrapper">
           <ImageBackground />

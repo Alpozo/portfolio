@@ -8,7 +8,7 @@ export const BusinessInsights = () => {
 
     return (
 
-        <div className="article-wrapper font-body-regular">
+        <div className="article-wrapper primary-text">
             <ReactMarkdown>{markdownContent}</ReactMarkdown>
             <p>holaaaaaa</p>
             {/* <div>

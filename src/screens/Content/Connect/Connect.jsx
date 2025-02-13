@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Cell } from '../../../components/Cell/Cell';
 import './Connect.css';
 
+
 export const Connect = () => {
   const [ toastVisible, setToastVisible ] = useState(false);
 
@@ -49,7 +50,7 @@ export const Connect = () => {
         href="https://assets.calendly.com/assets/external/widget.css"
         rel="stylesheet"
       />
-      <p className='connect-txt font-body-regular'>
+      <p className='connect-txt primary-text'>
         I'm always open to new opportunities, adventures, or friends. If you
         have something to share, reach me out!
       </p>
@@ -79,8 +80,8 @@ export const Connect = () => {
       />
 
       {toastVisible && (
-        <div className="toast">
-          Email copied to clipboard!
+        <div className="toast primary-text">
+          Email copied to clipboard 👍
         </div>
       )}
     </div>

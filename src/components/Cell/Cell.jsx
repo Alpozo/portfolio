@@ -6,17 +6,16 @@ export const Cell = ({ titleJSX, title, subtitle, interactive, onClick, link, li
   const interactiveStyle = interactive && 'interactive-cell'
   const hoveredStyle = isHovered && 'hovered'
 
-  // QUITAR ESTILOS A SOLO EN A>CELL WRAPPER E INVERTIR, TIENE QUE SER AL REVES SI LINK NO ESTA ENTONCES ESTO.
   return (
     !link ? (
       <div className={`cell-wrapper ${interactiveStyle} ${hoveredStyle}`} onClick={onClick}>
         {titleJSX && titleJSX}
-        {title && <p className='font-body-regular'>{title}</p>}
-        <p className='font-small-regular'>{subtitle}</p>
+        {title && <p className='primary-text'>{title}</p>}
+        <p className='secondary-text '>{subtitle}</p>
       </div>
     ) : <a className={`cell-wrapper ${interactiveStyle}`} href={link} target="_blank" rel="noreferrer">
       {titleJSX && titleJSX}
-      {title && <p className='font-body-regular'>{title}</p>}
-      <p className='font-small-regular'>{subtitle}</p>
+      {title && <p className='primary-text'>{title}</p>}
+      <p className='secondary-text'>{subtitle}</p>
     </a>)
 }

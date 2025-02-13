@@ -2,8 +2,18 @@
     font-size: 18px;
     line-height: 32px;
     margin-bottom: 24px;
+
+    .bold {
+        color: var(--strong-color);
+        font-weight: 600;
+    }
 }
 
 .link {
     text-decoration: underline;
+
+    &:hover {
+        color: var(--strong-color);
+
+    }
 }

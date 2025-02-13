@@ -8,7 +8,7 @@ export const Header = () => {
           <p className="text-header">
             Alejandro del Pozo
           </p>
-          <p className="font-small-regular">
+          <p className="secondary-text">
             Product Designer
           </p>
         </div>

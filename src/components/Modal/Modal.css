@@ -1,12 +1,17 @@
 .modal-overlay {
     position: fixed;
-    z-index: 99999999;
-    opacity: 1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100dvh;
     display: flex;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
     animation: fadeInModal 1s ease forwards;
-    visibility: visible;
 }
+
 
 .modal-content {
     position: fixed;
@@ -18,6 +23,8 @@
     border-radius: 48px 48px 0px 0px;
     visibility: visible;
     box-shadow: var(--dropshadow-layer-2);
+    animation: fadeIn 0.4s ease forwards;
+
 
 
 }
@@ -38,6 +45,7 @@
 
 
     100% {
+        opacity: 1;
         background-color: var(--overlay-bg-color);
         backdrop-filter: blur(8px);
     }
@@ -81,14 +89,9 @@
     }
 }
 
-.modal-content {
-    animation: fadeIn 0.4s ease forwards;
-}
-
 
 @media (max-width:980px) {
     .modal-content {
-        position: relative;
         height: 90vh;
         width: 100%;
         overflow: hidden;
