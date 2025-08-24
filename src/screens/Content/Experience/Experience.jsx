@@ -3,6 +3,13 @@ import { Cell } from '../../../components/Cell/Cell';
 
 export const Experience = () => {
     return (
+
+        <div className='list-wrapper'>
+            <div className='cronoCell'>
+                <p>2025</p>
+                <Cell titleJSX={<p className='primary-text'>
+                    Sr. Product Designer at <a target='_blank' href='https://www.bitpanda.com' rel="noreferrer">Bitpanda</a></p>} subtitle="Fintech" />
+            </div>
         <div className='list-wrapper'>
             <div className='cronoCell'>
                 <p>2022</p>
